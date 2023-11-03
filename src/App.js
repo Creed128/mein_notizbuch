@@ -8,6 +8,7 @@ const App = () => {
   const mockNotes = [
     { id: 1, title: 'Notiz 1', content: 'Inhalt von Notiz 1' },
     { id: 2, title: 'Notiz 2', content: 'Inhalt von Notiz 2' },
+    { id: 3, title: 'Notiz 3', content: 'Inhalt von Notiz 3' }
     // ... andere Notizen
   ];
 
