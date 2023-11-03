@@ -29,7 +29,7 @@
   }
   
   /* Media Query für kleinere Bildschirme */
-  @media (max-width: 768px) {
+  (max-width: 768px) {
     .notiz-element {
       padding: 8px;
       margin-bottom: 8px;
