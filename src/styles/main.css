@@ -1,0 +1,21 @@
+/* styles/main.css */
+
+/* Grundstil für Notizen */
+.notiz-element {
+    background-color: #f0f0f0;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  /* Stil für den Notizentitel */
+  .notiz-element h3 {
+    color: #333;
+  }
+  
+  /* Stil für den Notizinhalt */
+  .notiz-element p {
+    color: #666;
+  }
+  
