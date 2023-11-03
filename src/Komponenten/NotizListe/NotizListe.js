@@ -1,16 +1,12 @@
-// src/Komponenten/NotizListe/NotizListe.js
-
 import React from 'react';
-import './NotizListe.css'; // Stellen Sie sicher, dass der Pfad zur CSS-Datei korrekt ist
+import NotizElement from './NotizElement';
 
-const NotizListe = ({ notes }) => {
+const NotizListe = ({ notizen, bestätigenLöschen }) => {
   return (
     <div>
-      {notes.map((note) => (
-        <div className="notiz-element" key={note.id}>
-          <h3>{note.title}</h3>
-          <p>{note.content}</p>
-        </div>
+      <h2>Notizliste</h2>
+      {notizen.map((notiz) => (
+        <NotizElement key={notiz.id} notiz={notiz} bestätigenLöschen={bestätigenLöschen} />
       ))}
     </div>
   );
