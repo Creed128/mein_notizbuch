@@ -1,16 +1,15 @@
-// src/Komponenten/NotizListe/NotizListe.js
 import React from 'react';
+import NotizElement from './NotizElement';
 
-class NotizListe extends React.Component {
-  // Logik für das Sortieren und Suchen hier implementieren
-  render() {
-    return (
-      <div>
-        {/* Liste und Suchformular hier */}
-        <p>Notizliste</p>
-      </div>
-    );
-  }
-}
+const NotizListe = ({ notizen, bestätigenLöschen }) => {
+  return (
+    <div>
+      <h2>Notizliste</h2>
+      {notizen.map((notiz) => (
+        <NotizElement key={notiz.id} notiz={notiz} bestätigenLöschen={bestätigenLöschen} />
+      ))}
+    </div>
+  );
+};
 
 export default NotizListe;
