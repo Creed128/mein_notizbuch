@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <script src="http://localhost:8097"></script>
   <title>Notizbuch App</title>
   <!-- Ajoute le lien vers le fichier CSS principal -->
   <link rel="stylesheet" type="text/css" href="./styles/main.css">
@@ -12,14 +13,20 @@
   <noscript>JavaScript aktivieren, um den APP zu benutzen .</noscript>
   <div id="root"></div>
 
-  <script src="./src/Dienste/NotizDienst.js"></script>
-  <script src="./src/Hilfsmittel/localStorage.js"></script>
-  <script src="./src/Komponenten/NotizFormular/NeueNotizFormular.js"></script>
-  <script src="./src/Komponenten/NotizFormular/NotizBearbeitenFormular.js"></script>
-  <script src="./src/Komponenten/NotizListe/NotizListe.js"></script>
-  <script src="./src/Komponenten/NotizListe/NotizElement.js"></script>
-  <script src="./src/Komponenten/NotizDetail/NotizDetail.js"></script>
-  <script src="./src/App.js"></script>
-  <script src="./src/index.js"></script>
+  <!-- <script src="./src/Dienste/NotizDienst.js"></script> -->
+  <script type="text/babel" src="./src/Dienste/NotizDienst.js"></script>
+  <!--<script src="./src/Hilfsmittel/localStorage.js"></script> -->
+  <script type="text/babel" src="./src/Hilfsmittel/localStorage.js"></script>
+   <!--<script src="./src/Komponenten/NotizFormular/NeueNotizFormular.js"></script> -->
+  <script type="text/babel" src="./src/Komponenten/NotizFormular/NeueNotizFormular.js"></script>
+  <!--<script src="./src/Komponenten/NotizFormular/NotizBearbeitenFormular.js"></script>-->
+  <script type="text/babel" src="./src/Komponenten/NotizFormular/NotizBearbeitenFormular.js"></script>
+  <!-- <script src="./src/Komponenten/NotizListe/NotizListe.js"></script> -->
+  <script type="text/babel" src="./src/Komponenten/NotizListe/NotizListe.js"></script>
+  <!-- <script src="./src/Komponenten/NotizListe/NotizElement.js"></script> -->
+  <script type="text/babel" src="./src/Komponenten/NotizListe/NotizElement.js"></script>
+  <script type="text/babel" src="./src/Komponenten/NotizDetail/NotizDetail.js"></script>
+  <script type="text/babel" src="./src/App.js"></script>
+  <script type="text/babel"src="./src/index.js"></script>
 </body>
 </html>
