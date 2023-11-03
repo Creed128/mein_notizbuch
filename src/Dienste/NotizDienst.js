@@ -1,9 +1,9 @@
 // Importieren Sie alle erforderlichen Abhängigkeiten
 import React, { useState } from 'react';
 
-// Erstellen Sie eine Funktion oder ein Hook für den Notizdienst
+// eine Funktion oder ein Hook für den Notizdienst
 function NotizDienst() {
-  // Verwenden Sie den React-Zustand, um Notizen zu speichern
+  //  React-Zustand, um Notizen zu speichern
   const [notizen, setNotizen] = useState([]);
 
   // Funktion zum Hinzufügen einer neuen Notiz
@@ -11,19 +11,19 @@ function NotizDienst() {
     setNotizen([...notizen, neueNotiz]);
   };
 
-  // Funktion zum Aktualisieren einer vorhandenen Notiz
+  //  Aktualisieren von  Notiz
   const aktualisierenNotiz = (id, aktualisierteNotiz) => {
-    // Implementieren Sie die Logik zum Aktualisieren der Notiz
-    // Verwenden Sie setNotizen, um den Zustand zu aktualisieren
+    //  Logik zum Aktualisieren der Notiz
+    //  setNotizen, um den Zustand zu aktualisieren
   };
 
   // Funktion zum Löschen einer Notiz
   const loeschenNotiz = (id) => {
-    // Implementieren Sie die Logik zum Löschen der Notiz
-    // Verwenden Sie setNotizen, um den Zustand zu aktualisieren
+    //  Logik zum Löschen der Notiz
+    //  setNotizen, um den Zustand zu aktualisieren
   };
 
-  // Geben Sie die erforderlichen Funktionen und Daten zurück
+  //  Funktionen und Daten zurück
   return {
     notizen,
     hinzufuegenNotiz,
@@ -32,5 +32,5 @@ function NotizDienst() {
   };
 }
 
-// Exportieren Sie den Notizdienst für die Verwendung in anderen Komponenten
+// Export in anderen Komponenten
 export default NotizDienst;

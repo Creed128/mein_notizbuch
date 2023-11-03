@@ -1,0 +1,61 @@
+/* styles/main.css */
+
+/* Grundstil für Notizen */
+.notiz-element {
+  background-color: #93989a;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #765252;
+  border-radius: 5px;
+}
+
+/* Stil für den Notizentitel */
+.notiz-element h3 {
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Stil für den Notizinhalt */
+.notiz-element p {
+  color: #666;
+  font-size: 14px;
+}
+
+/* Stil für private Notizen */
+.private-notiz {
+  background-color: #f2f2f2;
+  border-color: #b3b3b3;
+}
+
+/* Media Query für kleinere Bildschirme */
+@media (max-width: 768px) {
+  .notiz-element {
+    padding: 8px;
+    margin-bottom: 8px;
+  }
+
+  .notiz-element h3 {
+    font-size: 16px;
+  }
+
+  .notiz-element p {
+    font-size: 12px;
+  }
+}
+.notiz-element {
+  background-color: #93989a;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #765252;
+  border-radius: 5px;
+}
+/* Stil für den Notizentitel */
+.notiz-element h3 {
+  color: #333;
+}
+
+/* Stil für den Notizinhalt */
+.notiz-element p {
+  color: #666;
+}
