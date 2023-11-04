@@ -1,7 +1,12 @@
-// src/App.js
-
 import React from 'react';
-import './styles/main.css';
+import './styles/main.css'; // Hinzugefügte Zeile
+import './NotizApp.css'; // Hinzugefügte Zeile
+import './NeueNotizFormular.css'; // Hinzugefügte Zeile
+import './NotizBearbeitenFormular.css'; // Hinzugefügte Zeile
+import './NotizElement.css'; // Hinzugefügte Zeile
+import './NotizListe.css'; // Hinzugefügte Zeile
+import './NotizDetail.css'; // Hinzugefügte Zeile
+
 import NotizListe from './Komponenten/NotizListe/NotizListe';
 import NeueNotizFormular from './Komponenten/NotizFormular/NeueNotizFormular';
 

@@ -1,0 +1,37 @@
+/* NotizBearbeitenFormular.css */
+.form-container {
+    background-color: #f5f0f0;
+    border: 5px solid #ccc;
+    padding: 20px;
+    margin: 20px 0;
+  }
+  
+  .form-container h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .form-container label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form-container input[type="text"],
+  .form-container textarea {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .form-container button {
+    background-color: #e62f0a;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .form-container button:hover {
+    background-color: #dd6040;
+  }
+  

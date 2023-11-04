@@ -1,5 +1,6 @@
 // src/Komponenten/NotizDetail/NotizDetail.js
 import React from 'react';
+import './NotizDetail.css';
 
 
 class NotizDetail extends React.Component {

@@ -1,0 +1,26 @@
+/* NotizDetail.css */
+.detail-container {
+    border: 1px solid #d5cfcf;
+    padding: 20px;
+    margin: 20px 0;
+  }
+  
+  .detail-container h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .detail-container p {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .detail-container a {
+    color: #3498db;
+    text-decoration: none;
+  }
+  
+  .detail-container a:hover {
+    text-decoration: underline;
+  }
+  

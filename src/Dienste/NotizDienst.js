@@ -1,5 +1,6 @@
 // Importieren Sie alle erforderlichen Abhängigkeiten
 import React, { useState } from 'react';
+import './NotizDienst.css'
 
 // eine Funktion oder ein Hook für den Notizdienst
 function NotizDienst() {

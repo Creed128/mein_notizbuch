@@ -1,0 +1,25 @@
+/* NotizElement.css */
+
+.notiz-element {
+    border: 1px solid #f8f6f6;
+    padding: 50px;
+    margin: 20px 0;
+  }
+  
+  .notiz-element h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .notiz-element .button {
+    background: linear-gradient(90deg, #0cc0f6, #09a2d5);
+    color: #141313;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    float: left; /* Um den Button auf die linke Seite zu verschieben */
+  }
+  
+  .notiz-element .button:hover {
+    background-color: rgb(247, 41, 5);
+  }
