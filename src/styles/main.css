@@ -1,135 +1,57 @@
 /* main.css */
 
-/* Stile aus NotizApp.css */
-/* Stile aus NotizApp.css */
 html, body {
   background: linear-gradient(325deg, #c0bdde 0%, #0db7e2 30%, #0979db 70%, #0c5f9f 100%);
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
 }
-
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #f7f2f2;
+#root {
+  text-align: center;
+  margin: 20px;
 }
-
-.header {
-  font-size: 24px;
+h2 {
+  color: #555;
+}
+label {
   font-weight: bold;
-}
-
-.note {
-  border: 1px solid #f1eded;
-  padding: 10px;
-  margin: 10px 0;
-  background-color: #f9f4f4;
-}
-
-.note-title {
-  font-size: 18px;
   font-weight: bold;
-}
-
-.note-content {
-  font-size: 14px;
-}
-
-/* Stile aus NeueNotizFormular.css */
-.form-container {
-  border: 1px solid #ccc;
-  padding: 20px;
-  margin: 20px 0;
-}
-
-.form-container h2 {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.form-container label {
-  display: block;
   margin-bottom: 5px;
 }
-
-.form-container input[type="text"],
-.form-container textarea {
-  width: 100%;
-  padding: 5px;
-  margin-bottom: 10px;
+input[type="text"] {
+  width: 25%;
+  padding: 20px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 16px;
 }
-
-.form-container button {
-  background-color: #3498db;
-  color: #fff;
+textarea {
+  width: 25%;
+  padding: 20px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 16px;
+}
+button {
+  background-color: #2e3033;
+  color: #cbc0c0;
   padding: 10px 20px;
   border: none;
+  border-radius: 3px;
   cursor: pointer;
+  margin-top: 10px;
 }
-
-.form-container button:hover {
-  background-color: #267bb5;
+button:hover {
+  background-color: #0056b3;
 }
-
-/* Stile aus NotizElement.css */
 .notiz-element {
-  border: 1px solid #f8f6f6;
-  padding: 50px;
-  margin: 20px 0;
+  height: 100px ;
+  width: 500px;
+  background-color: rgb(243, 245, 247);
+  font-size: 20px;
 }
 
-.notiz-element h3 {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
 
-.notiz-element .button {
-  background: linear-gradient(90deg, #0cc0f6, #09a2d5);
-  color: #141313;
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-  float: left;
-}
-
-.notiz-element .button:hover {
-  background-color: rgb(247, 41, 5);
-}
-
-/* Stile aus NotizListe.css */
-.list-container {
-  border: 1px solid #f30e0e;
-  padding: 20px;
-  margin: 20px 0;
-}
-
-.list-container h2 {
-  background-color: #fff;
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-/* Stile aus NotizDetail.css */
-.detail-container {
-  border: 1px solid #d5cfcf;
-  padding: 20px;
-  margin: 20px 0;
-}
-
-.detail-container h2 {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.detail-container p {
-  font-size: 14px;
-  margin-bottom: 10px;
-}
-
-.detail-container a {
-  color: #0b9fe8;
-  text-decoration: none;
-}
-
-.detail-container a:hover {
-  text-decoration: underline;
-}
