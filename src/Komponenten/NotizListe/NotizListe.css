@@ -1,0 +1,13 @@
+/* NotizListe.css */
+.list-container {
+    border: 1px solid #f30e0e;
+    padding: 20px;
+    margin: 20px 0;
+  }
+  
+  .list-container h2 {
+    background-color: #fff;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  

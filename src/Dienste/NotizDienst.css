@@ -1,0 +1,29 @@
+/* NotizApp.css */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f0f0f0;
+  }
+  
+  .header {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .note {
+    border: 1px solid #ede7e7;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #f9f4f4;
+  }
+  
+  .note-title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .note-content {
+    font-size: 14px;
+  }
+  
