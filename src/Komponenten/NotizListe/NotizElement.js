@@ -1,5 +1,5 @@
 import React from 'react';
-import './NotizElement.css';
+
 const NotizElement = ({ notiz, bestätigenLöschen }) => {
     const handleLöschen = () => {
         // Hier kannst du die Funktion bestätigenLöschen aufrufen und die Notiz-ID übergeben
