@@ -1,37 +1,38 @@
 /* NotizElement.css */
 
+  
 button[type="submit"] {
-  display: flex;
-  background: linear-gradient(#edf1ec, rgb(73, 170, 170));
-  color: #0e0ee2;
-  font-size: 12px;
-  outline: 0;
-  border: none;
-  cursor: pointer;
-  border-radius: 40px;
-  padding: 5px 10px;
-  position: absolute;
-  font-weight: bold;
-  right: 590px;
-}
+    display: flex;
+    background: linear-gradient(#edf1ec, rgb(73, 170, 170));
+    color: #0e0ee2;
+    font-size: 12px;
+    outline: 0;
+    border: none;
+    cursor: pointer;
+    border-radius: 40px;
+    padding: 5px 10px;
+    position: absolute;
+    font-weight: bold;
+    right: 590px;
+  }
+  
+  /* Stile für den "Notiz löschen"-Button in der Notizliste */
+  .notiz-element button {
+    display: flex;
+    background: linear-gradient(#07a3d3, #eeecf0);
+    color: #0606f3;
+    font-size: 12px;
+    outline: 0;
+    border: none;
+    cursor: pointer;
+    border-radius: 40px;
+    padding: 5px 10px;
+    margin-top: 70px;
+    position: absolute;
+    font-weight: bold;
+    right: 720px;
+  }
+  notiz-element button:hover {
+    background-color: #a01515;
+  }
 
-/* Stile für den "Notiz löschen"-Button in der Notizliste */
-.notiz-element button {
-  display: flex;
-  background: linear-gradient(#07a3d3, #eeecf0);
-  color: #0606f3;
-  font-size: 12px;
-  outline: 0;
-  border: none;
-  cursor: pointer;
-  border-radius: 40px;
-  padding: 5px 10px;
-  margin-top: 70px;
-  position: absolute;
-  font-weight: bold;
-  right: 720px;
-}
-
-.notiz-element button:hover {
-  background-color: #a01515;
-}

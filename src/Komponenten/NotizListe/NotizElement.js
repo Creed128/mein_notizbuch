@@ -2,6 +2,7 @@ import React from 'react';
 
 const NotizElement = ({ notiz, bestätigenLöschen }) => {
     const handleLöschen = () => {
+        // Hier kannst du die Funktion bestätigenLöschen aufrufen und die Notiz-ID übergeben
         bestätigenLöschen(notiz.id);
     };
 

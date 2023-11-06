@@ -1,25 +1,27 @@
+// src/App.js
+
 import React from 'react';
 import './styles/main.css';
 import NotizListe from './Komponenten/NotizListe/NotizListe';
 import NeueNotizFormular from './Komponenten/NotizFormular/NeueNotizFormular';
-import NotizDienst from './Dienste/NotizDienst.js';
 
 const App = () => {
-  const notizDienst = NotizDienst();
+  const [notizen, setNotizen] = React.useState([
+    { id: 1, title: 'Notiz 1', content: 'Inhalt von Notiz 1' },
+    { id: 2, title: 'Notiz 2', content: 'Inhalt von Notiz 2' },
+    { id: 3, title: 'Notiz 3', content: 'Inhalt von Notiz 3' }
+    // ... andere Notizen
+  ]);
 
   const handleNeueNotiz = (neueNotiz) => {
-    notizDienst.hinzufuegenNotiz(neueNotiz);
-  };
-
-  const handleBestätigenLöschen = (id) => {
-    notizDienst.loeschenNotiz(id);
+    setNotizen([...notizen, neueNotiz]);
   };
 
   return (
     <div>
       <h1>Mein Notizbuch App</h1>
-      <NeueNotizFormular hinzufuegenNotiz={handleNeueNotiz} />
-      <NotizListe notizen={notizDienst.notizen} bestätigenLöschen={handleBestätigenLöschen} />
+      <NeueNotizFormular onNeueNotiz={handleNeueNotiz} />
+      <NotizListe notizen={notizen} />
     </div>
   );
 };
