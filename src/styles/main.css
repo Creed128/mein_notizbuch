@@ -15,7 +15,7 @@ html, body {
 
 #root {
   text-align: center;
-  margin: 500px;
+  margin: 100px;
 }
 
 h2 {
@@ -25,7 +25,6 @@ h2 {
 #notizliste {
   text-align: right;
 }
-
 
 
 

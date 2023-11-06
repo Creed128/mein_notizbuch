@@ -4,7 +4,7 @@ import React from 'react';
 import './styles/main.css';
 import NotizListe from './Komponenten/NotizListe/NotizListe';
 import NeueNotizFormular from './Komponenten/NotizFormular/NeueNotizFormular';
-import Search from './Komponenten/search/search';
+import search from './Komponenten/search/search';
 
 const App = () => {
   const [notizen, setNotizen] = React.useState([
@@ -26,9 +26,7 @@ const App = () => {
         <input type="text" id="searchInput" placeholder="Suche..." />
         <button id="searchButton">Suchen</button>
       </div>
-      
       <NotizListe notizen={notizen} />
-      
     </div>
   );
 };

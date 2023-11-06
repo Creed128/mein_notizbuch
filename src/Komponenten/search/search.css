@@ -4,7 +4,7 @@
 }
 
 #searchInput {
-  width: 80%;
+  width: 20%;
   padding: 10px;
   border: 1px solid #f1e9e9;
   border-radius: 5px;
@@ -12,7 +12,7 @@
 }
 
 #searchButton {
-  width: 20%;
+  width: 10%;
   background: rgb(7, 164, 242);
   color: white;
   border: none;
