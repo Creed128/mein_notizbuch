@@ -14,11 +14,14 @@ const NeueNotizFormular = ({ hinzufuegenNotiz }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Hier kannst du die Funktion hinzufuegenNotiz aufrufen und die neuen Notizdaten übergeben
-    hinzufuegenNotiz({ titel, inhalt });
-    // Setze die Eingabefelder zurück
-    setTitel('');
-    setInhalt('');
+    // Überprüfe, ob hinzufuegenNotiz eine Funktion ist, bevor du sie aufrufst
+    if (typeof hinzufuegenNotiz === 'function') {
+      // Hier kannst du die Funktion hinzufuegenNotiz aufrufen und die neuen Notizdaten übergeben
+      hinzufuegenNotiz({ titel, inhalt });
+      // Setze die Eingabefelder zurück
+      setTitel('');
+      setInhalt('');
+    }
   };
 
   return (
