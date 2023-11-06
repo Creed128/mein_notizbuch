@@ -4,7 +4,6 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-  <script src="http://localhost:8097"></script>
   <title>Notizbuch App</title>
   <!-- Ajoute le lien vers le fichier CSS principal -->
   <link rel="stylesheet" type="text/css" href="./styles/main.css">
@@ -12,7 +11,11 @@
 </head>
 <body>
   <noscript>JavaScript aktivieren, um den APP zu benutzen .</noscript>
-  <div id="root"></div>
+  <div id="root">
+    <div class="search-box">
+      <input type="text" id="search-input" class="search-input" placeholder="Suche..." />
+      <button class="search-button" onclick="search()">Suchen</button>
+    </div>
   <script src="./src/Dienste/NotizDienst.js"></script>
   <script src="./src/Hilfsmittel/localStorage.js"></script>
   <script src="./src/Komponenten/NotizFormular/NeueNotizFormular.js"></script>
