@@ -1,0 +1,36 @@
+.notiz-element {
+    height: 100px;
+    width: 500px;
+    background: linear-gradient(to right, #0db7e2, #eef1ed);
+    font-size: 20px;
+    text-align: center;
+    margin: 40px;
+  }
+  label {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"] {
+    background: linear-gradient(to right, #0dbbe2, #e9ede8);
+    width: 50%;
+    padding: 20px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+  }
+  textarea {
+    width: 90%;
+    padding: 40px;
+    margin: 10px 0;
+    border: 10px solid #169cb4;
+    background-color: #fff;
+    border-radius: 100px;
+    box-shadow: 5px 5px 1px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+      }
+
+      
+

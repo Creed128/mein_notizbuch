@@ -1,5 +1,6 @@
 /* NotizElement.css */
 
+  
 button[type="submit"] {
     display: flex;
     background: linear-gradient(#edf1ec, rgb(73, 170, 170));
@@ -31,7 +32,7 @@ button[type="submit"] {
     font-weight: bold;
     right: 720px;
   }
-  
-  .notiz-element button:hover {
+  notiz-element button:hover {
     background-color: #a01515;
   }
+
