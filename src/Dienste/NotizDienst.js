@@ -12,7 +12,7 @@ function NotizDienst() {
   };
 
   //  Aktualisieren von  Notiz
-  const aktualisierenNotiz = (id, aktualisierteNotiz) => {
+  const aktualisierenNotiz = (id, a) => {
     //  Logik zum Aktualisieren der Notiz
     //  setNotizen, um den Zustand zu aktualisieren
   };

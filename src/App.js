@@ -4,6 +4,12 @@ import React from 'react';
 import './styles/main.css';
 import NotizListe from './Komponenten/NotizListe/NotizListe';
 import NeueNotizFormular from './Komponenten/NotizFormular/NeueNotizFormular';
+import './NotizDetail/NotizBearbeiten.js';
+import './NotizDetail/NotizLöschen.js';
+
+
+
+
 
 const App = () => {
   const [notizen, setNotizen] = React.useState([
@@ -25,5 +31,10 @@ const App = () => {
     </div>
   );
 };
+
+
+
+  
+
 
 export default App;
