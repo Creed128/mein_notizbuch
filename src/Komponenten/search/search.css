@@ -1,18 +1,21 @@
-/* styles.css */
-/* CSS für die Suchfunktion */
-.search-box {
-  margin: 10px;
+/* CSS für das Suchfeld und das Suchsymbol */
+#searchContainer {
+  display: flex;
 }
 
-.search-input {
-  padding: 5px;
-  width: 200px;
+#searchInput {
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #f1e9e9;
+  border-radius: 5px;
+  outline: none;
 }
 
-.search-button {
-  padding: 5px 10px;
-  background-color: #d9122c;
-  color: #151515;
+#searchButton {
+  width: 20%;
+  background: rgb(7, 164, 242);
+  color: white;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
 }
