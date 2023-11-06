@@ -1,17 +1,18 @@
-// search.js
 import React, { useState } from 'react';
 import './search.css';
+
 function Search() {
   const [searchInput, setSearchInput] = useState('');
   const [notes, setNotes] = useState(['Notiz 1', 'Notiz 2', 'Notiz 3']);
+  const [filteredNotes, setFilteredNotes] = useState(notes); // Hier speichern wir eine Kopie der Notizen
 
   const handleSearch = () => {
     const lowercaseSearchInput = searchInput.toLowerCase();
     const filteredNotes = notes.filter((note) =>
       note.toLowerCase().includes(lowercaseSearchInput)
     );
-    // Aktualisiere den State, um die angezeigten Notizen zu filtern
-    setNotes(filteredNotes);
+    // Aktualisiere den State, um die gefilterten Notizen zu speichern
+    setFilteredNotes(filteredNotes);
   };
 
   return (
@@ -24,7 +25,7 @@ function Search() {
       />
       <button onClick={handleSearch}>Suchen</button>
       <ul id="note-list">
-        {notes.map((note, index) => (
+        {filteredNotes.map((note, index) => (
           <li key={index}>{note}</li>
         ))}
       </ul>
