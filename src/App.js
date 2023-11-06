@@ -20,12 +20,13 @@ const App = () => {
 
   return (
     <div>
+      <h1>Mein Notizbuch App</h1>
+      <NeueNotizFormular onNeueNotiz={handleNeueNotiz} />
       <div id="searchContainer">
         <input type="text" id="searchInput" placeholder="Suche..." />
         <button id="searchButton">Suchen</button>
       </div>
-      <h1>Mein Notizbuch App</h1>
-      <NeueNotizFormular onNeueNotiz={handleNeueNotiz} />
+      
       <NotizListe notizen={notizen} />
       
     </div>
