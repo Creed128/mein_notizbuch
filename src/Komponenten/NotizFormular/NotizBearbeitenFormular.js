@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import './NotizBearbeitenFormular.css';
+
 const NotizBearbeitenFormular = ({ notiz, aktualisierenNotiz }) => {
-  const [titel, setTitel] = useState(notiz.titel);
-  const [inhalt, setInhalt] = useState(notiz.inhalt);
+  const [titel, setTitel] = useState(notiz.title);
+  const [inhalt, setInhalt] = useState(notiz.content);
 
   const handleTitelChange = (e) => {
     setTitel(e.target.value);
@@ -14,8 +14,7 @@ const NotizBearbeitenFormular = ({ notiz, aktualisierenNotiz }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Hier kannst du die Funktion aktualisierenNotiz aufrufen und die aktualisierten Notizdaten übergeben
-    aktualisierenNotiz(notiz.id, { titel, inhalt });
+    aktualisierenNotiz(notiz.id, { title: titel, content: inhalt });
   };
 
   return (

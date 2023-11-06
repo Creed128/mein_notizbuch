@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './NeueNotizFormular.css';
 
 const NeueNotizFormular = ({ hinzufuegenNotiz }) => {
   const [titel, setTitel] = useState('');
@@ -13,31 +12,29 @@ const NeueNotizFormular = ({ hinzufuegenNotiz }) => {
     setInhalt(e.target.value);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (typeof hinzufuegenNotiz === 'function') {
-      hinzufuegenNotiz({ titel, inhalt });
+  const handleNeueNotiz = () => {
+    if (titel && inhalt) {
+      const erstellungsdatum = new Date().toLocaleString();
+      hinzufuegenNotiz({ id: Date.now(), title: titel, content: inhalt, isPublic: true, erstellungsdatum });
       setTitel('');
       setInhalt('');
     }
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Titel:
-          <input type="text" value={titel} onChange={handleTitelChange} />
-        </label>
-        <br />
-        <label>
-          Inhalt:
-          <textarea value={inhalt} onChange={handleInhaltChange} />
-        </label>
-        <br />
-        <button type="submit">Notiz erstellen</button>
-      </form>
-      <div className="container"></div>
+    <div className='new-note'>
+      <h2>Neue Notiz erstellen</h2>
+      <label className='title' for="title-input">Titel:</label>
+      <input className='title-input' type="text" value={titel} onChange={handleTitelChange} />
+      <label className='content' for="content-input">Inhalt:</label>
+      <textarea className='content-input' value={inhalt} onChange={handleInhaltChange} />
+      <div className='radios'>
+      <input type='radio' name='private-public' value='private' />
+      <label for="private-public">Privat</label>
+      <input type='radio' name='private-public' value='public' checked/>
+      <label for="private-public">Öffentlich</label>
+      </div>
+      <button className='create-button' onClick={handleNeueNotiz}>Notiz erstellen</button>
     </div>
   );
 };
