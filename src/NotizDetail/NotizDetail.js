@@ -1,4 +1,6 @@
 import React from 'react';
+import './NotizDetail.css';
+
 
 const NotizDetail = ({ notiz }) => {
   return (

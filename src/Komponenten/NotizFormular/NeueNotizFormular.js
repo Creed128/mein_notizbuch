@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './NeueNotizFormular.css';
 
 const NeueNotizFormular = ({ hinzufuegenNotiz }) => {
   const [titel, setTitel] = useState('');
@@ -14,11 +15,8 @@ const NeueNotizFormular = ({ hinzufuegenNotiz }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Überprüfe, ob hinzufuegenNotiz eine Funktion ist, bevor du sie aufrufst
     if (typeof hinzufuegenNotiz === 'function') {
-      // Hier kannst du die Funktion hinzufuegenNotiz aufrufen und die neuen Notizdaten übergeben
       hinzufuegenNotiz({ titel, inhalt });
-      // Setze die Eingabefelder zurück
       setTitel('');
       setInhalt('');
     }
@@ -26,7 +24,6 @@ const NeueNotizFormular = ({ hinzufuegenNotiz }) => {
 
   return (
     <div>
-      <h2>Neue Notiz erstellen</h2>
       <form onSubmit={handleSubmit}>
         <label>
           Titel:
@@ -40,6 +37,7 @@ const NeueNotizFormular = ({ hinzufuegenNotiz }) => {
         <br />
         <button type="submit">Notiz erstellen</button>
       </form>
+      <div className="container"></div>
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import React from 'react';
+import './NotizListe.css';
 import NotizElement from './NotizElement';
 
 const NotizListe = ({ notizen, bestätigenLöschen }) => {

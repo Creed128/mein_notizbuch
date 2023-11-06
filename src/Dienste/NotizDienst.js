@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import './NotizDienst.css'
+
 function NotizDienst() {
   // React-Zustand, um Notizen zu speichern
   const [notizen, setNotizen] = useState([]);
