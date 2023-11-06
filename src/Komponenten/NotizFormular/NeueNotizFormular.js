@@ -15,16 +15,15 @@ const NeueNotizFormular = ({ hinzufuegenNotiz }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Call the hinzufuegenNotiz function and pass the new note data
-    hinzufuegenNotiz({ titel, inhalt });
-    // Reset the input fields
-    setTitel('');
-    setInhalt('');
+    if (typeof hinzufuegenNotiz === 'function') {
+      hinzufuegenNotiz({ titel, inhalt });
+      setTitel('');
+      setInhalt('');
+    }
   };
 
   return (
     <div>
-
       <form onSubmit={handleSubmit}>
         <label>
           Titel:
@@ -38,8 +37,7 @@ const NeueNotizFormular = ({ hinzufuegenNotiz }) => {
         <br />
         <button type="submit">Notiz erstellen</button>
       </form>
-      <div className="container">
-      </div>
+      <div className="container"></div>
     </div>
   );
 };
