@@ -12,4 +12,4 @@ const Notiz = ({ notiz, bearbeiteNotiz, loescheNotiz }) => {
   );
 };
 
-export default Notiz;
+

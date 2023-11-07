@@ -12,4 +12,4 @@ export const abrufenAusLocalStorage = (schlüssel) => {
 // Daten löschen aus dem localStorage
 export const löschenAusLocalStorage = (schlüssel) => {
   localStorage.removeItem(schlüssel);
-};
+
