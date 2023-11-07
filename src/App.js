@@ -1,29 +1,20 @@
-import React, { useState, useEffect } from 'react';
+// src/App.js
+
+import React from 'react';
 import './styles/main.css';
 import NotizListe from './Komponenten/NotizListe/NotizListe';
 import NeueNotizFormular from './Komponenten/NotizFormular/NeueNotizFormular';
-import { speichernImLocalStorage, abrufenAusLocalStorage } from './Hilfsmittel/localStorage';
+import search from './Komponenten/search/search';
 
 const App = () => {
-  const [notizen, setNotizen] = useState([]);
-  const [suchbegriff, setSuchbegriff] = useState('');
-  const [sortierung, setSortierung] = useState('titel'); // Sortierung nach Titel standardmäßig
-  const [sichtbarkeit, setSichtbarkeit] = useState('alle'); // Standardmäßig alle Notizen anzeigen
-
-  useEffect(() => {
-    const gespeicherteNotizen = abrufenAusLocalStorage('notizen');
-    if (gespeicherteNotizen) {
-      setNotizen(gespeicherteNotizen);
-    }
-  }, []);
-
-  useEffect(() => {
-    speichernImLocalStorage('notizen', notizen);
-  }, [notizen]);
+  const [notizen, setNotizen] = React.useState([
+    { id: 1, title: 'Notiz 1', content: 'Inhalt von Notiz 1' },
+    { id: 2, title: 'Notiz 2', content: 'Inhalt von Notiz 2' },
+    { id: 3, title: 'Notiz 3', content: 'Inhalt von Notiz 3' }
+    // ... andere Notizen
+  ]);
 
   const handleNeueNotiz = (neueNotiz) => {
-    // Füge den aktuellen Status (privat oder öffentlich) zur Notiz hinzu
-    neueNotiz.isPublic = sichtbarkeit === 'oeffentlich';
     setNotizen([...notizen, neueNotiz]);
   };
 
@@ -85,30 +76,13 @@ const App = () => {
 
   return (
     <div>
-      <div class="head">
-        <h1>Mein Notizbuch App</h1>
-        <NeueNotizFormular hinzufuegenNotiz={handleNeueNotiz} />
-        <input
-          type="text"
-          placeholder="Suche nach Notizen..."
-          value={suchbegriff}
-          onChange={handleSuchbegriffChange}
-        />
-        <select value={sortierung} onChange={handleSortierungChange}>
-          <option value="titel">Sortieren nach Titel</option>
-          <option value="erstellungsdatum">Sortieren nach Erstellungsdatum</option>
-        </select>
-        <select value={sichtbarkeit} onChange={handleSichtbarkeitChange}>
-          <option value="alle">Alle Notizen anzeigen</option>
-          <option value="oeffentlich">Nur öffentliche Notizen anzeigen</option>
-          <option value="privat">Nur private Notizen anzeigen</option>
-        </select>
+      <h1>Mein Notizbuch App</h1>
+      <NeueNotizFormular onNeueNotiz={handleNeueNotiz} />
+      <div id="searchContainer">
+        <input type="text" id="searchInput" placeholder="Suche..." />
+        <button id="searchButton">Suchen</button>
       </div>
-      <NotizListe
-        notizen={gefilterteNotizen}
-        bearbeiteNotiz={handleNotizAktualisierung}
-        loescheNotiz={handleNotizLoeschen}
-      />
+      <NotizListe notizen={notizen} />
     </div>
   );
 };
