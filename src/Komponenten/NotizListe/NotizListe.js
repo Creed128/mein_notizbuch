@@ -1,5 +1,4 @@
 import React from 'react';
-import Notiz from './NotizListe';
 
 const NotizListe = ({ notizen, bearbeiteNotiz, loescheNotiz }) => {
   return (
