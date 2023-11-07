@@ -2,7 +2,11 @@ import React, { useState, useEffect } from 'react';
 import './styles/main.css';
 import NotizListe from './Komponenten/NotizListe/NotizListe';
 import NeueNotizFormular from './Komponenten/NotizFormular/NeueNotizFormular';
+<<<<<<< HEAD
 import { speichernImLocalStorage, abrufenAusLocalStorage } from './Hilfsmittel/localStorage';
+=======
+import NotizDienst from './Dienste/NotizDienst.js';
+>>>>>>> parent of 877b6e9 (Merge pull request #15 from credotechstarter/Hajar)
 
 const App = () => {
   const [notizen, setNotizen] = useState([]);
@@ -85,6 +89,7 @@ const App = () => {
 
   return (
     <div>
+<<<<<<< HEAD
       <div class="head">
         <h1>Mein Notizbuch App</h1>
         <NeueNotizFormular hinzufuegenNotiz={handleNeueNotiz} />
@@ -109,6 +114,11 @@ const App = () => {
         bearbeiteNotiz={handleNotizAktualisierung}
         loescheNotiz={handleNotizLoeschen}
       />
+=======
+      <h1>Mein Notizbuch App</h1>
+      <NeueNotizFormular hinzufuegenNotiz={handleNeueNotiz} />
+      <NotizListe notizen={notizDienst.notizen} bestätigenLöschen={handleBestätigenLöschen} />
+>>>>>>> parent of 877b6e9 (Merge pull request #15 from credotechstarter/Hajar)
     </div>
   );
 };
