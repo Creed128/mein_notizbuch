@@ -1,4 +1,4 @@
-/* NotizElement.css */
+/* 
 
   
 button[type="submit"] {
@@ -16,7 +16,7 @@ button[type="submit"] {
     right: 590px;
   }
   
-  /* Stile für den "Notiz löschen"-Button in der Notizliste */
+  /* Stile für den "Notiz löschen"-Button in der Notizliste 
   .notiz-element button {
     display: flex;
     background: linear-gradient(#07a3d3, #eeecf0);
@@ -36,3 +36,4 @@ button[type="submit"] {
     background-color: #a01515;
   }
 
+ */

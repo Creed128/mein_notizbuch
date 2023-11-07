@@ -1,13 +1,16 @@
 import React from 'react';
-import './NotizListe.css';
-import NotizElement from './NotizElement';
+import Notiz from './NotizListe';
 
-const NotizListe = ({ notizen, bestätigenLöschen }) => {
+const NotizListe = ({ notizen, bearbeiteNotiz, loescheNotiz }) => {
   return (
-    <div>
-      <h2>Notizliste</h2>
+    <div className="notiz-liste">
       {notizen.map((notiz) => (
-        <NotizElement key={notiz.id} notiz={notiz} bestätigenLöschen={bestätigenLöschen} />
+        <Notiz
+          key={notiz.id}
+          notiz={notiz}
+          bearbeiteNotiz={bearbeiteNotiz}
+          loescheNotiz={loescheNotiz}
+        />
       ))}
     </div>
   );

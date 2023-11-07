@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import deleteNote from "./NotizDetail.js";
 import NotizListe from "../Komponenten/NotizListe/NotizListe";
 
@@ -29,18 +29,21 @@ const App = () => {
   };
 
   // Klick-Ereignislistener für den "Löschen"-Button
-  const handleDelete = () => {
-    // Dialogfenster öffnen
-    const confirmDelete = window.confirm("Sind Sie sicher, dass Sie die Notiz löschen möchten?");
+  const handleDelete = useCallback(
+    () => {
+      // Dialogfenster öffnen
+      const confirmDelete = window.confirm("Sind Sie sicher, dass Sie die Notiz löschen möchten?");
 
-    // Wenn der Benutzer bestätigt, dann die Notiz löschen
-    if (confirmDelete) {
-      deleteNote(index);
+      // Wenn der Benutzer bestätigt, dann die Notiz löschen
+      if (confirmDelete) {
+        deleteNote(index);
 
-      // Index auf null setzen
-      setIndex(null);
-    }
-  };
+        // Index auf null setzen
+        setIndex(null);
+      }
+    },
+    [index]
+  );
 
   return (
     <div>

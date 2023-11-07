@@ -1,37 +1,120 @@
 /* main.css */
 
-html, body {
-  background: linear-gradient(325deg, #c0bdde 0%, #0db7e2 30%, #0979db 70%, #0c5f9f 100%);
+:root{
+  --background-color: #22223b;
+  --text-color: #f2e9e4;
+}
+
+*{
   margin: 0;
   padding: 0;
+}
+
+html, body {
   font-family: Arial, Helvetica, sans-serif;
-  color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  width: 53%;
+  margin: auto;
 }
 
 #root {
   text-align: center;
-  margin: 500px;
+  position: absolute;
+  top: 0;
+  margin: 20px 0;
 }
 
 h2 {
-  color: #2c0aeb;
+  color: #9a8c98;
 }
 
-#notizliste {
-  text-align: right;
+.head{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
+.notiz{
+  background-color: #4a4e69;
+  display: flex;
+  flex-direction: column;
+  margin: 10px auto;
+  border-radius: 10px;
+  box-shadow: 0px 14px 24px -4px rgba(0,0,0,0.53);
+}
 
+.notiz button{
+  background-color: #6c656b;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 3px 120px;
+  color: var(--text-color);
+  box-shadow: 0px 0px 24px -4px rgba(0,0,0,0.53);
+  transition: background-color .2s;
+}
 
+.notiz button:hover{
+  background-color: #9b919a;
+  box-shadow: 0px 0px 24px -4px rgba(0, 0, 0, 0.223)
+}
 
+.new-note{
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: repeat(4, 30px);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  justify-content: center;
+  align-items: center;
+}
 
+.new-note h2{
+  grid-area: 1 / 1 / 2 / 3;
+}
 
+.title{
+  grid-area: 2 / 1 / 3 / 2; 
+}
 
+.title-input{
+  grid-area: 2 / 2 / 3 / 3;
+}
 
- 
+.content{
+  grid-area: 3 / 1 / 5 / 2;;
+}
 
+.content-input{
+  grid-area:  3 / 2 / 5 / 3;;
+}
+
+.create-button{
+  grid-area: 5 / 1 / 6 / 3;
+}
+
+.radios{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 52vw;
+}
+
+.radios input{
+  margin-right: 5px;
+}
+
+.radios label{
+  margin-right: 30px;
+}
+
+.notiz-liste{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
