@@ -1,116 +1,239 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-#######################################################
-
 Notizbuch
-Projekt: Notizbuch
-Zeit:
+
+# Projekt: Notizbuch
+
+## Table of Contents
+1. [General Info](#general-info)
+2. [Technologies](#technologies)
+
+## Table of Contents
+<a Notizbuch="general-info"></a>
+### General Info
+
+# Zeit:
 vom [31.10.2023] bis [13.11.2023]
 
-Ziel des Projektziel:
-Das Ziel des Projekts "Online-Notizbuch-Web-App" ist die Entwicklung einer benutzerfreundlichen Webanwendung, die es den Benutzern ermöglicht, Notizen zu erstellen, zu bearbeiten und zu speichern. Die Anwendung soll im Browser laufen und die Notizen im LocalStorage des Browsers speichern.
+# Ziel des Projektziel:
+Das Ziel des Projekts "Online-Notizbuch-Web-App" ist die Entwicklung einer
+benutzerfreundlichen Webanwendung, die es den Benutzern ermöglicht, Notizen zu
+erstellen, zu bearbeiten und zu speichern. Die erstellten Notizen werden sicher im
+LocalStorage des Browsers gespeichert, um die Privatsphäre der Benutzer zu gewährleisten.
 
-Liste von Aufgaben, Features und Verbesserungen, für die Entwicklung des Produkts
-1 Benutzeroberfläche und Grundfunktionen:
-Erstellung von Notizen (Titel und Inhalt). Anzeigen von Notizen. Bearbeitung von Notizen. Löschen von Notizen mit Bestätigung. Sortieren von Notizen nach Titel. Sortieren von Notizen nach Erstellungsdatum. Suchfunktion zum Suchen von Notizen.
+Die Anwendung bietet folgende Funktionalitäten:
 
-2 Unterscheidung von öffentlichen und privaten Notizen:
-Hinzufügen der Option, Notizen als privat zu markieren. Sicherstellen, dass private Notizen nur für den jeweiligen Benutzer sichtbar sind.
+- Erstellung von Notizen: Benutzer können neue Notizen mit Titeln und Inhalten erstellen.
+- Bearbeitung von Notizen: Die Anwendung ermöglicht es Benutzern, vorhandene Notizen
+zu bearbeiten und Aktualisierungen vorzunehmen.
+- Sortieren und Suchen: Benutzer können ihre Notizen nach Titel oder Erstellungsdatum
+sortieren, um die gewünschten Informationen leicht zu finden. Außerdem können sie eine
+Suchfunktion verwenden, um spezifische Notizen zu suchen.
+- Unterscheidung von öffentlichen und privaten Notizen: Die Anwendung ermöglicht es
+Benutzern, zwischen öffentlichen und privaten Notizen zu unterscheiden. Private Notizen
+sind nur für den jeweiligen Benutzer sichtbar und bieten eine zusätzliche
+Datenschutzschicht.
+- Bestätigung vor dem Löschen: Um versehentliches Löschen zu verhindern, wird eine
+Bestätigung angezeigt, bevor Notizen endgültig gelöscht werden.
+- Benutzeroberfläche für Notizen: Die Anwendung bietet eine benutzerfreundliche
+Benutzeroberfläche, die es Benutzern ermöglicht, Notizen anzuzeigen, zu bearbeiten und
+zu löschen. Dies gewährleistet eine einfache und intuitive Interaktion mit den
+gespeicherten Informationen.
 
-3 Datenschutz und Sicherheit:
-Implementierung der sicheren Speicherung von Notizen im LocalStorage des Browsers. Gewährleistung der Privatsphäre der Benutzer.
+# 30/10/23 Tag 1: Projektvorbereitung
 
-4 Benutzerfreundlichkeit und Design:
-Gestaltung einer benutzerfreundlichen und intuitiven Benutzeroberfläche.
+Klärung der Anforderungen und Spezifikationen.
 
-5 Authentifizierung und Benutzerkonten (optional, falls nicht bereits vorhanden):
-Erstellung und Verwaltung von Benutzerkonten. Anmeldung und Abmeldung von Benutzern.
+Verantwortlichkeit: Product Owner (PO)
+Rolle: Der Product Owner ist dafür verantwortlich, die Anforderungen und Spezifikationen zu
+klären und sicherzustellen, dass das Projekt die Bedürfnisse der Benutzer erfüllt.
+Einrichtung der Entwicklungsumgebung.
 
-6 Mobile Responsiveness (optional, falls gewünscht):
-Anpassung der Benutzeroberfläche, um auf mobilen Geräten ordnungsgemäß angezeigt und verwendet werden zu können.
+Verantwortlichkeit: Entwicklerteam
+Rolle: Das Entwicklerteam ist dafür verantwortlich, die Entwicklungsumgebung einzurichten,
+um sicherzustellen, dass alle notwendigen Werkzeuge und Ressourcen verfügbar sind.
 
-7 Notizen teilen (optional, falls gewünscht):
-Implementierung der Möglichkeit, Notizen mit anderen Benutzern zu teilen.
+## Was wurde gemacht?
+- Repositorý erstellt und Developers, Scrummanster eingeladen
+- Word Dokument erstellt ( Mitglieder des Teams arbeiten gemeinsam an dem
+Dokument)
+- Erste Einträge in der README Datei geschrieben
+- Liste von Aufgaben, Features und Verbesserung des Produkts in der README Datei
+eingetragen
 
-8 Offline-Zugriff (optional, falls gewünscht):
-Implementierung von Funktionen, die es Benutzern ermöglichen, auf ihre Notizen offline zuzugreifen und Änderungen vorzunehmen.
+# Tag 2-3: Benutzeroberfläche und CSS
 
-9 Import/Export von Notizen (optional, falls gewünscht):
-Funktionen zum Importieren und Exportieren von Notizen in verschiedenen Formaten.
+Gestaltung der Benutzeroberfläche mit CSS.
 
-10 Backup und Wiederherstellung (optional, falls gewünscht):
-Möglichkeit für Benutzer, Notizen zu sichern und wiederherzustellen.
+Verantwortlichkeit: Designer und Entwicklerteam
+Rolle: Der Designer erstellt das visuelle Design der Benutzeroberfläche, während das
+Entwicklerteam die Umsetzung übernimmt.
+Erstellung der Grundstruktur der HTML-Seiten.
 
-11 Versionskontrolle (optional, falls gewünscht):
-Implementierung einer Versionskontrolle, um Änderungen an Notizen nachzuverfolgen.
+Verantwortlichkeit: Entwicklerteam
+Rolle: Das Entwicklerteam erstellt die HTML-Grundstruktur der Webseiten, um das Design
+umzusetzen.
 
-12 Benachrichtigungen (optional, falls gewünscht):
-Hinzufügen von Benachrichtigungen für Aktualisierungen und gemeinsam genutzte Notizen.
+# Tag 4: Notizen erstellen und speichern
+
+Implementierung des Notizerstellungsformulars (HTML).
+
+Verantwortlichkeit: Entwicklerteam
+Rolle: Das Entwicklerteam implementiert das Formular, mit dem Benutzer Notizen erstellen
+können.
+JavaScript-Programmierung zum Speichern von Notizen im LocalStorage.
+
+Verantwortlichkeit: Entwicklerteam
+Rolle: Das Entwicklerteam entwickelt die Funktion, um Notizen im LocalStorage zu
+speichern.
+
+# Tag 5-6: Sortieren und Suchen
+
+Implementierung der Sortier- und Suchfunktionen (JavaScript).
+Verantwortlichkeit: Entwicklerteam
+Rolle: Das Entwicklerteam implementiert Funktionen zur Sortierung und Suche von Notizen.
+
+# Tag 7: Unterscheidung von öffentlichen und privaten Notizen
+
+Hinzufügen der Funktion zur Auswahl von öffentlichen oder privaten Notizen im
+Erstellungsformular.
+Verantwortlichkeit: Entwicklerteam
+Rolle: Das Entwicklerteam implementiert die Funktion zur Unterscheidung von öffentlichen
+und privaten Notizen.
+
+# Tag 8: Bestätigung vor dem Löschen
+
+Implementierung der Bestätigungsfunktion vor dem Löschen von Notizen
+(JavaScript-Dialoge).
+Verantwortlichkeit: Entwicklerteam
+Rolle: Das Entwicklerteam fügt die Bestätigungsfunktion hinzu, um Benutzer vor
+versehentlichem Löschen zu schützen.
+
+# Tag 9: Benutzeroberfläche für Anzeigen, Bearbeiten und Löschen
+
+Erstellung der Benutzeroberfläche, um Notizen anzuzeigen, zu bearbeiten und zu löschen.
+Verantwortlichkeit: Designer und Entwicklerteam
+Rolle: Der Designer erstellt die Benutzeroberfläche für das Anzeigen, Bearbeiten und
+Löschen von Notizen, während das Entwicklerteam die Umsetzung übernimmt.
+
+# Tag 10: Dokumentation und Bereitstellung
+
+Erstellung einer Dokumentation für die Web-App.
+
+Verantwortlichkeit: Product Owner (PO) und Entwicklerteam
+Rolle: Der Product Owner ist für die Erstellung der Dokumentation verantwortlich, während
+das Entwicklerteam unterstützt.
+Bereitstellung der Anwendung auf einem Webserver.
+
+Verantwortlichkeit: Entwicklerteam
+Rolle: Das Entwicklerteam ist dafür verantwortlich, die Anwendung auf einem Webserver
+bereitzustellen, um sie für Benutzer zugänglich zu machen.
+
+Planung für ein Online-Notizbuch mit CSS, JavaScript, HTML und React in 8 Tagen
+Ziele:
+
+Eine Webanwendung erstellen, die Benutzern ermöglicht, Notizen zu erstellen, zu
+bearbeiten und zu speichern.
+
+Die Notizen werden im LocalStorage des Browsers gespeichert.
+
+Benutzer sollten in der Lage sein, Notizen nach Titel oder Erstellungsdatum zu sortieren und
+zu suchen.
+
+Bieten Sie die Möglichkeit zur Unterscheidung von öffentlichen und privaten Notizen.
+Implementieren Sie eine Bestätigung, bevor Notizen endgültig gelöscht werden.
+
+Fügen Sie eine Benutzeroberfläche für die Webanwendung mit React hinzu.
+
+Voraussetzungen:
+
+Grundkenntnisse in HTML, CSS und JavaScript
+Erfahrung mit React
+
+Zeitplan:
+
+Tag 1:
+Erstellen eines Grundgerüsts für die Webanwendung mit HTML, CSS und JavaScript
+Implementierung der Basisfunktionen zum Erstellen, Bearbeiten und Speichern von Notizen
+
+Tag 2:
+Implementierung der Funktion zum Sortieren und Suchen von Notizen
+Implementierung der Funktion zum Speichern von Notizen im LocalStorage
+
+Tag 3:
+Implementierung der Funktion zum Anzeigen von öffentlichen und privaten Notizen
+Implementierung der Funktion zur Bestätigung vor dem Löschen von Notizen
+
+Tag 4:
+Erstellen einer Benutzeroberfläche für die Webanwendung mit React
+
+Tag 5:
+Testen und Fehlerbehebung der Webanwendung
+
+Tag 6:
+Optimierung der Benutzeroberfläche
+
+Tag 7:
+Hinzufügen weiterer Funktionen, z. B. Import/Export, Teilen, Verschlüsselung
+
+Tag 8:
+Testen und Fehlerbehebung der Webanwendung
+
+Details:
+
+Tag 1:
+Erstellen einer HTML-Datei mit dem Grundgerüst für die Webanwendung.
+Erstellen einer CSS-Datei mit den Stilen für die Webanwendung.
+Erstellen einer JavaScript-Datei mit der Basisfunktion zum Erstellen, Bearbeiten und
+Speichern von Notizen.
+
+Tag 2:
+Implementierung der Funktion zum Sortieren und Suchen von Notizen in der
+JavaScript-Datei.
+Implementierung der Funktion zum Speichern von Notizen im LocalStorage in der
+JavaScript-Datei.
+
+Tag 3:
+Implementierung der Funktion zum Anzeigen von öffentlichen und privaten Notizen in der
+JavaScript-Datei.
+Implementierung der Funktion zur Bestätigung vor dem Löschen von Notizen in der
+JavaScript-Datei.
+
+Tag 4:
+Erstellen einer Benutzeroberfläche für die Webanwendung mit React.
+Implementierung der Basisfunktionen für die Benutzeroberfläche, z. B. Eingabe von Notizen,
+Sortieren und Suchen.
+
+Tag 5:
+Testen und Fehlerbehebung der Webanwendung.
+Optimierung der Benutzeroberfläche, z. B. Hinzufügen von Beschriftungen und
+Erläuterungen.
+
+Tag 6:
+Hinzufügen weiterer Funktionen, z. B. Import/Export, Teilen, Verschlüsselung.
+Testen und Fehlerbehebung der Webanwendung.
+
+Tag 7:
+Weiterentwicklung der Benutzeroberfläche, z. B. Hinzufügen von neuen Funktionen oder
+Verbesserung des Designs.
+
+Tag 8:
+Testen und Fehlerbehebung der Webanwendung.
+Freigabe der Webanwendung.
+Diese Planung ist nur ein Vorschlag und kann je nach Ihren Bedürfnissen angepasst
+werden.
+
+Tipps für die Umsetzung:
+Fokussieren Sie sich auf die wichtigsten Funktionen zuerst.
+Testen Sie Ihre Webanwendung regelmäßig, um Fehler zu finden und zu beheben.
+Bitten Sie andere Personen, Ihre Webanwendung zu testen, um Feedback zu erhalten.
+
+## Technologies
+***
+A list of technologies used within the project:
+* [VSCode / Änliche IDE](https://code.visualstudio.com/): Version 1.84.0
+* [Git / Github / Github Desktop](https://github.com/EMSCOOL/Notizbuch/blob/Konstantin-JavaScript/README.md): Version 2.42.0, Github AE, 3.1.3
+* [Google Suite für Dokumentation, Visualisierung und Präsentation](Google-Apps): Version 118.0
+* [Material Design Lite](https://getmdl.io/components/index.html#toggles-section): Version unknown
+* [React Tutorial](https://reactjs.org/tutorial/tutorial.html): Version unkown
+* [HTML Tutorial](https//www.w3schools.com/html): Version unknown
+* [CSS Tutorial](https//www.w3schools.com/css): Version unknown
+* [JavaScript Tutorial](https://www.w3schools.com/js): Version unknown
