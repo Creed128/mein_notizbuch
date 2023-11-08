@@ -1,128 +1,189 @@
 /* main.css */
 
-/* Hintergrundfarbe und Textfarbe werden bestimmt */
-:root{
-  --background-color: #0979db;
-  --text-color: #f2e9e4;
+
+.root {
+  color: #eef0f5;
+  font-size: 20px;
+  font-weight: bold;
 }
 
+
 *{
-  margin: 0;
+  margin: 10;
   padding: 0;
 }
 
-/* Schriftart wird bestimmt */
+
 html, body {
-/* Schriftart wird bestimmt */
   font-family: Arial, Helvetica, sans-serif;
-/* Seite und Spalten, Zeilen werden zentriert*/
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  /* Hintergrundfarbe wird von root übernommen */
-  background-color: var(--background-color);
-  /* Textfarbe wird auch von root übernommen*/
-  color: var(--text-color);
+  background-color: #1b98d6;
+  color: #fff;
   width: 53%;
   margin: auto;
 }
 
 
 #root {
+  background :linear-gradient(325deg, #c0bdde 0%, #4d8fcc 30%, #208eca 70%, #3f82a8 100%) ;
   text-align: center;
   position: absolute;
   top: 0;
-  margin: 20px 0;
+  margin: 50px 0;
 }
 
+
 h2 {
-  color:  rgb(53, 66, 101);
+  color: #696169;
+  font-size: 20px;
 }
+
 
 .head{
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 10px;
+  padding: 15px; /* Innenabstand erhöhen */
+  margin: 100px;
+  border-radius: 10px;
+  box-shadow: 0px 14px 24px -4px rgba(151, 116, 116, 0.53);
+ 
 }
+
 
 .notiz{
-  background-color: rgb(72, 107, 175);
+  background-color: #f1f3f5;
   display: flex;
   flex-direction: column;
-  margin: 30px auto;
-  border-radius: 50px;
-  box-shadow: 0px 14px 24px -4px rgba(0, 0, 0, 0.332);
+  margin: 10px auto;
+  border-radius: 10px;
+  box-shadow: 0px 14px 24px -4px rgba(151, 116, 116, 0.53);
 }
 
+
 .notiz button{
-  background-color: rgb(70, 33, 154);
+  background-color: #0aa6ef;
+  font-size: 16px;
+  font-weight: bold;
   outline: none;
   border: none;
   border-radius: 5px;
-  padding: 5px;
-  margin: 3px 120px;
+  padding: 20px;
+  margin: 5px 120px;
   color: var(--text-color);
-  box-shadow: 0px 0px 24px -4px rgba(0,0,0,0.53);
-  transition: background-color .2s;
+  box-shadow: 0px 0px 24px -4px rgba(14, 131, 203, 0.53);
 }
+
 
 .notiz button:hover{
-  background-color: #9b919a;
-  box-shadow: 0px 0px 24px -4px rgba(0, 0, 0, 0.223)
+  background-color: rgb(241, 47, 8);
+  box-shadow: 0px 0px 24px -4px rgba(231, 9, 9, 0.223);
+ 
 }
 
+
 .new-note{
-  display: grid; 
+  display: grid;
   grid-template-columns: repeat(2, 50%);
   grid-template-rows: repeat(4, 30px);
-  grid-column-gap: 5px;
+  grid-column-gap: 0px;
   grid-row-gap: 10px;
   justify-content: center;
   align-items: center;
 }
 
+
 .new-note h2{
-  grid-area: 1 / 1 / 2 / 3;
+  grid-area: 1/ 1 / 2 / 3;
+  font-size: 24px;
 }
 
+
 .title{
-  grid-area: 2 / 1 / 3 / 2; 
+  grid-area: 2 / 1 / 3 / 2;
+  font-size: 24px;
+
 }
+
 
 .title-input{
   grid-area: 2 / 2 / 3 / 3;
+  text-align: center; /* Zentrieren Sie den Text horizontal */
+  background-color: #fff; /* Hintergrundfarbe anpassen */
+  border: 2px solid #099eef; /* Rand anpassen */
+  border-radius: 5px; /* Ecken abrunden */
+  padding: 10px; /* Innenabstand anpassen */
+  font-size: 16px; /* Schriftgröße anpassen */
+  color: #0f0f10; /* Textfarbe anpassen */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Schatten anpassen */
+  /* Weitere gewünschte Stilanpassungen */
 }
+
 
 .content{
   grid-area: 3 / 1 / 5 / 2;;
+  font-size: 24px;
 }
 
+
 .content-input{
-  grid-area:  3 / 2 / 5 / 3;;
+  grid-area: 3 / 2 / 5 / 3; /* Position im Grid */
+  background-color: #fff; /* Hintergrundfarbe anpassen */
+  border: 2px solid #099eef; /* Rand anpassen */
+  border-radius: 5px; /* Ecken abrunden */
+  padding: 10px; /* Innenabstand anpassen */
+  font-size: 16px; /* Schriftgröße anpassen */
+  color: #06060d; /* Textfarbe anpassen */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Schatten anpassen */
+  /* Weitere gewünschte Stilanpassungen */
 }
+
 
 .create-button{
   grid-area: 5 / 1 / 6 / 3;
+  background-color: #fff; /* Hintergrundfarbe anpassen */
+  border: 2px solid #099eef; /* Rand anpassen */
+  border-radius: 5px; /* Ecken abrunden */
+  padding: 5px; /* Innenabstand anpassen */
+  font-size: 16px; /* Schriftgröße anpassen */
+  font-weight: bold;
+  color: #06060d; /* Textfarbe anpassen */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Schatten anpassen */
+  /* Weitere gewünschte Stilanpassungen */
 }
+
 
 .radios{
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 52vw;
+  width: 40vw;
 }
+
 
 .radios input{
   margin-right: 5px;
 }
 
+
 .radios label{
-  margin-right: 30px;
+  margin-right: 20px;
 }
 
+
 .notiz-liste{
+  padding: 20px;
+  font-size: 18px; /* Schriftgröße anpassen */
+  color: #1b191b; /* Textfarbe anpassen */
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
+
+
+
+
+
