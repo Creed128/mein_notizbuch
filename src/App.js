@@ -29,7 +29,7 @@ const App = () => {
 
   const handleNotizAktualisierung = (id, aktualisierteNotiz) => {
     const aktualisierteNotizen = notizen.map((notiz) =>
-      notiz.id === id ? { ...notiz, ...aktualisierteNotiz } : notiz
+        notiz.id === id ? { ...notiz, ...aktualisierteNotiz } : notiz
     );
     setNotizen(aktualisierteNotizen);
   };
