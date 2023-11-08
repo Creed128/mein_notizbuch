@@ -1,7 +1,8 @@
 /* main.css */
 
+/* Hintergrundfarbe und Textfarbe werden bestimmt */
 :root {
-  background: rgb(6, 146, 221);
+  --background-color: #0979db;
   color: #eef0f5;
   font-size: 20px;
   font-weight: bold;
@@ -12,17 +13,24 @@
   padding: 0;
 }
 
+/* Schriftart wird bestimmt */
 html, body {
+/* Schriftart wird bestimmt */
   font-family: Arial, Helvetica, sans-serif;
+/* Seite und Spalten, Zeilen werden zentriert*/
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  /* Hintergrundfarbe wird von root übernommen */
   background-color: var(--background-color);
+  /* Textfarbe wird auch von root übernommen*/
   color: var(--text-color);
   width: 53%;
   margin: auto;
 }
+
 
 #root {
   background :linear-gradient(325deg, #c0bdde 0%, #4d75cc 30%, #06a1f4 70%, #3f82a8 100%) ;
@@ -33,14 +41,14 @@ html, body {
 }
 
 h2 {
-  color: #696169;
+  color:  rgb(53, 66, 101);
   font-size: 20px;
 }
 
 .head{
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 50px;
   padding: 15px; /* Innenabstand erhöhen */
   margin: 100px;
   border-radius: 10px;
@@ -49,16 +57,16 @@ h2 {
 }
 
 .notiz{
-  background-color: #f1f3f5;
+  background-color: rgb(72, 107, 175);
   display: flex;
   flex-direction: column;
-  margin: 10px auto;
-  border-radius: 10px;
-  box-shadow: 0px 14px 24px -4px rgba(151, 116, 116, 0.53);
+  margin: 30px auto;
+  border-radius: 50px;
+  box-shadow: 0px 14px 24px -4px rgba(0, 0, 0, 0.332);
 }
 
 .notiz button{
-  background-color: #0aa6ef;
+  background-color: rgb(70, 33, 154);
   font-size: 16px;
   font-weight: bold;
   outline: none;
@@ -77,10 +85,10 @@ h2 {
 }
 
 .new-note{
-  display: grid;
+  display: grid; 
   grid-template-columns: repeat(2, 50%);
   grid-template-rows: repeat(4, 30px);
-  grid-column-gap: 0px;
+  grid-column-gap: 5px;
   grid-row-gap: 10px;
   justify-content: center;
   align-items: center;
