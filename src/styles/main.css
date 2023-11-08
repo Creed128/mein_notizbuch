@@ -2,7 +2,7 @@
 
 /* Hintergrundfarbe und Textfarbe werden bestimmt */
 :root {
-  --background-color: #0979db;
+  background: rgb(12, 154, 231);
   color: #eef0f5;
   font-size: 20px;
   font-weight: bold;
