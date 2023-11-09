@@ -28,7 +28,7 @@ const App = () => {
 
   const handleNotizAktualisierung = (id, aktualisierteNotiz) => {
     const aktualisierteNotizen = notizen.map((notiz) =>
-      notiz.id === id ? { ...notiz, ...aktualisierteNotiz } : notiz
+        notiz.id === id ? { ...notiz, ...aktualisierteNotiz } : notiz
     );
     setNotizen(aktualisierteNotizen);
   };
@@ -84,7 +84,7 @@ const App = () => {
 
   return (
     <div>
-      <div className="head">
+      <div class="head">
         <h1>Mein Notizbuch App</h1>
         <NeueNotizFormular hinzufuegenNotiz={handleNeueNotiz} />
         <input
@@ -103,6 +103,7 @@ const App = () => {
           <option value="privat">Nur private Notizen anzeigen</option>
         </select>
       </div>
+      <NeueNotizFormular hinzufuegenNotiz={handleNeueNotiz} />
       <NotizListe
         notizen={gefilterteNotizen}
         bearbeiteNotiz={handleNotizAktualisierung}
