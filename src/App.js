@@ -8,7 +8,6 @@ const App = () => {
   const [notizen, setNotizen] = useState([]);
   const [suchbegriff, setSuchbegriff] = useState('');
   const [sortierung, setSortierung] = useState('titel'); // Sortierung nach Titel standardmäßig
-  const [sichtbarkeit, setSichtbarkeit] = useState('alle'); // Standardmäßig alle Notizen anzeigen
 
   useEffect(() => {
     const gespeicherteNotizen = abrufenAusLocalStorage('notizen');
@@ -23,13 +22,12 @@ const App = () => {
 
   const handleNeueNotiz = (neueNotiz) => {
     // Füge den aktuellen Status (privat oder öffentlich) zur Notiz hinzu
-    neueNotiz.isPublic = sichtbarkeit === 'oeffentlich';
     setNotizen([...notizen, neueNotiz]);
   };
 
   const handleNotizAktualisierung = (id, aktualisierteNotiz) => {
     const aktualisierteNotizen = notizen.map((notiz) =>
-        notiz.id === id ? { ...notiz, ...aktualisierteNotiz } : notiz
+      notiz.id === id ? { ...notiz, ...aktualisierteNotiz } : notiz
     );
     setNotizen(aktualisierteNotizen);
   };
@@ -51,10 +49,6 @@ const App = () => {
     setSortierung(e.target.value);
   };
 
-  const handleSichtbarkeitChange = (e) => {
-    setSichtbarkeit(e.target.value);
-  };
-
   const filterNachSuchbegriff = (notiz, eingabe) => {
     return (
       notiz.title.toLowerCase().includes(eingabe) ||
@@ -62,18 +56,9 @@ const App = () => {
     );
   };
 
-  const filterNachSichtbarkeit = (notiz) => {
-    if (sichtbarkeit === 'alle') {
-      return true;
-    } else if (sichtbarkeit === 'oeffentlich') {
-      return notiz.isPublic;
-    } else {
-      return !notiz.isPublic;
-    }
-  };
 
   const gefilterteNotizen = notizen
-    .filter((notiz) => filterNachSuchbegriff(notiz, suchbegriff) && filterNachSichtbarkeit(notiz))
+    .filter((notiz) => filterNachSuchbegriff(notiz, suchbegriff))
     .sort((a, b) => {
       if (sortierung === 'titel') {
         return a.title.localeCompare(b.title);
@@ -97,11 +82,6 @@ const App = () => {
         <select value={sortierung} onChange={handleSortierungChange}>
           <option value="titel">Sortieren nach Titel</option>
           <option value="erstellungsdatum">Sortieren nach Erstellungsdatum</option>
-        </select>
-        <select value={sichtbarkeit} onChange={handleSichtbarkeitChange}>
-          <option value="alle">Alle Notizen anzeigen</option>
-          <option value="oeffentlich">Nur öffentliche Notizen anzeigen</option>
-          <option value="privat">Nur private Notizen anzeigen</option>
         </select>
       </div>
       <NotizListe
