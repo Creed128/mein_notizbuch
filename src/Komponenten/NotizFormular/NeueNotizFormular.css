@@ -1,0 +1,28 @@
+.new-note {
+    background: linear-gradient(45deg, #fff, #ceaace, #2db6e4, #fff);;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .title-input,
+  .content-input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 5px solid #dfa8dc;
+    border-radius: 4px;
+  }
+  .create-button {
+    background: linear-gradient(45deg,#fff, #e7c8e7, #81cee7);;
+    color: #0c27f3;
+    font-weight: bold;
+    font-size: 16px;
+    border: 1px;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+  }
+  .create-button:hover {
+    background: linear-gradient(45deg, #fff, #6ae02f, #f6f7f3);;
+  }
+  

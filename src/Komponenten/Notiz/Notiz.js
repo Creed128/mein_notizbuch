@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './notiz.css'; // Importieren Sie die CSS-Datei
 
 const Notiz = ({ notiz, bearbeiteNotiz, loescheNotiz, edit }) => {
   const [showPopup, setShowPopup] = useState(false);
