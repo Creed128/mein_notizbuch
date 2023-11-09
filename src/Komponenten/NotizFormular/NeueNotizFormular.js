@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import './NeueNotizFormular.css';
 const NeueNotizFormular = ({ hinzufuegenNotiz }) => {
   const [titel, setTitel] = useState('');
   const [inhalt, setInhalt] = useState('');
