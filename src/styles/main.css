@@ -1,116 +1,127 @@
 /* main.css */
 
-.root {
-  color: #1111ea;
-  font-size: 24px;
-  font-weight: bold;
-}
-h1 {
-  display: block;
-  font-size: 40px;
-  font-weight: bold;
-}
-*{
-  margin: 10;
-  padding: 0;
-}
-html, body {
+body {
   font-family: Arial, Helvetica, sans-serif;
+  background-color: #eddaf6;
+  color: #1111ea;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  background-color: #eddaf6;
-  color: #fff;
-  width: 53%;
-  margin: auto;
-}
-#root {
-  background : linear-gradient(325deg, #e5cbe5 0%, #eff2f5 30%, #4784a5 70%, #cfb6dc 100%) ;
-  text-align: center;
-  position: absolute;
-  top: 0;
-  margin: 70px 0;
+  margin: 0;
+  padding: 0;
 }
 
-h2 {
-  color: #696169;
+.head {
+  text-align: center;
+  margin: 20px;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.new-note {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+
+.label {
   font-size: 20px;
-}
-.new-note{
-  display: grid;
-  grid-template-columns: repeat(1, 50%);
-  grid-template-rows: repeat(2, 30px);
-  grid-column-gap: 0px;
-  grid-row-gap: 50px;
-  justify-content: center;
-  align-items: center;
-  place-items: center;
-}
-.new-note h2{
-  grid-area: 1/ 1 / 2 / 3;
-  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-.title{
-  grid-area: 2 / 1 / 3 / 2;
-  font-size: 40px;
-  font-weight: bold;
-}
-.title-input{
-  grid-area: 2 / 2 / 3 / 3;
-  text-align: center; /* Zentrieren Sie den Text horizontal */
-  background: #fff;
-  border: 5px solid rgb(205, 145, 213); /* Rand anpassen */
-  border-radius: 5px; /* Ecken abrunden */
-  padding: 10px; /* Innenabstand anpassen */
-  font-size: 20px; /* Schriftgröße anpassen */
-  font-weight: bold;
-  color: #0b0b0b; /* Textfarbe anpassen */
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Schatten anpassen */
-  /* Weitere gewünschte Stilanpassungen */
-  height: 50px;
-  width: 600px;
+.input-field {
+  width: 70%;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #247ac5;
+  border-radius: 5px;
+  margin-bottom: 20px;
 }
 
-.content{
-  grid-area: 3 / 1 / 5 / 2;;
-  font-size: 40px;
-  font-weight: bold;
+.textarea-field {
+  width: 70%;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #af7eba;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  height: 200px;
+  line-height: 1.5;
+  font-family: 'Courier New', Courier, monospace; /* Utilise une police monospace pour les lignes */
 }
-.content-input{
-  grid-area: 3 / 2 / 5 / 3; /* Position im Grid */
-  background: #fff;
-  border: 5px solid #af7eba; /* Rand anpassen */
-  border-radius: 5px; /* Ecken abrunden */
-  padding: 0px; /* Innenabstand anpassen */
-  text-align: center;
-  font-size: 24px; /* Schriftgröße anpassen */
-  font-weight: bold;
-  color: #0e0e0f; /* Textfarbe anpassen */
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Schatten anpassen */
-  /* Weitere gewünschte Stilanpassungen */
-  height: 150px;
-  width: 650px;
-}
-.radios{
+
+.radios {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40vw;
+  margin-bottom: 20px;
 }
 
-.radios input{
-  margin-right: 5px;
-}
-.radios label{
+.radio-group {
+  display: flex;
   margin-right: 20px;
 }
-.notiz-liste{
-  padding: 20px;
-  font-size: 24px; /* Schriftgröße anpassen */
-  color: #0f0f12; /* Textfarbe anpassen */
-  margin-top: 10px;
-  margin-bottom: 10px;
+
+.radio-label {
+  font-size: 16px;
+  margin-left: 5px;
 }
+
+.create-button {
+  background: linear-gradient(45deg, #fff, #e7c8e7, #81cee7);
+  font-size: 20px;
+  font-weight: bold;
+  outline: none;
+  border: none;
+  border-radius: 50px;
+  padding: 15px;
+  color: #0b0b0c;
+  box-shadow: 0px 0px 24px -4px rgba(14, 131, 203, 0.53);
+  cursor: pointer;
+}
+
+.create-button:hover {
+  background: linear-gradient(45deg, #fff, #6ae02f, #f6f7f3);
+  box-shadow: 0px 0px 24px -4px rgba(9, 213, 231, 0.223);
+}
+.notiz-element {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 8px;
+}
+
+.bearbeiten-button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.bearbeiten-button:hover {
+  background-color: #45a049;
+}
+
+
+
+
 
