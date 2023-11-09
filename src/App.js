@@ -7,8 +7,8 @@ import { speichernImLocalStorage, abrufenAusLocalStorage } from './Hilfsmittel/l
 const App = () => {
   const [notizen, setNotizen] = useState([]);
   const [suchbegriff, setSuchbegriff] = useState('');
-  const [sortierung, setSortierung] = useState('titel'); // Sortierung nach Titel standardmäßig
-  const [sichtbarkeit, setSichtbarkeit] = useState('alle'); // Standardmäßig alle Notizen anzeigen
+  const [sortierung, setSortierung] = useState('titel');
+  const [sichtbarkeit, setSichtbarkeit] = useState('alle');
 
   useEffect(() => {
     const gespeicherteNotizen = abrufenAusLocalStorage('notizen');
@@ -22,7 +22,6 @@ const App = () => {
   }, [notizen]);
 
   const handleNeueNotiz = (neueNotiz) => {
-    // Füge den aktuellen Status (privat oder öffentlich) zur Notiz hinzu
     neueNotiz.isPublic = sichtbarkeit === 'oeffentlich';
     setNotizen([...notizen, neueNotiz]);
   };
@@ -86,7 +85,8 @@ const App = () => {
   return (
     <div>
       <div class="head">
-      <h1>Mein Notizbuch App</h1>
+        <h1>Mein Notizbuch App</h1>
+        <NeueNotizFormular hinzufuegenNotiz={handleNeueNotiz} />
         <input
           type="text"
           placeholder="Suche nach Notizen..."
@@ -113,4 +113,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default App
