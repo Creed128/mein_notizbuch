@@ -126,3 +126,11 @@ h2 {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
+.popup{
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  align-items: center;
+  margin: auto;
+}

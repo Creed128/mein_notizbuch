@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 const NeueNotizFormular = ({ hinzufuegenNotiz }) => {
   const [titel, setTitel] = useState('');
   const [inhalt, setInhalt] = useState('');
+  const [isPublic, setIsPublic] = useState(true);
 
   const handleTitelChange = (e) => {
     setTitel(e.target.value);
@@ -15,9 +16,10 @@ const NeueNotizFormular = ({ hinzufuegenNotiz }) => {
   const handleNeueNotiz = () => {
     if (titel && inhalt) {
       const erstellungsdatum = new Date().toLocaleString();
-      hinzufuegenNotiz({ id: Date.now(), title: titel, content: inhalt, isPublic: true, erstellungsdatum });
+      hinzufuegenNotiz({ id: Date.now(), title: titel, content: inhalt, isPublic: isPublic, erstellungsdatum });
       setTitel('');
       setInhalt('');
+      setIsPublic(isPublic);
     }
   };
 
@@ -29,10 +31,10 @@ const NeueNotizFormular = ({ hinzufuegenNotiz }) => {
       <label className='content' for="content-input">Inhalt:</label>
       <textarea className='content-input' value={inhalt} onChange={handleInhaltChange} />
       <div className='radios'>
-      <input type='radio' name='private-public' value='private' />
-      <label for="private-public">Privat</label>
-      <input type='radio' name='private-public' value='public' checked/>
-      <label for="private-public">Öffentlich</label>
+        <input type='radio' name='private-public' value={!isPublic} />
+        <label for="private-public">Privat</label>
+        <input type='radio' name='private-public' value={isPublic} checked />
+        <label for="private-public">Öffentlich</label>
       </div>
       <button className='create-button' onClick={handleNeueNotiz}>Notiz erstellen</button>
     </div>
