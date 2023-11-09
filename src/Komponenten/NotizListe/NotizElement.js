@@ -13,4 +13,6 @@ const NotizElement = ({ notiz, bearbeiteNotiz, loescheNotiz }) => {
   );
 };
 
+
+
 export default NotizElement;

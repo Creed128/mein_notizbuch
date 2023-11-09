@@ -7,7 +7,6 @@
   font-weight: bold;
 }
 
-
 *{
   margin: 10;
   padding: 0;
@@ -25,7 +24,6 @@ html, body {
   margin: auto;
 }
 
-
 #root {
   background :linear-gradient(325deg, #e5cbe5 0%, #5e9acc 30%, #208eca 70%, #8952a5 100%) ;
   text-align: center;
@@ -34,12 +32,10 @@ html, body {
   margin: 10px 0;
 }
 
-
 h2 {
   color: #696169;
   font-size: 20px;
 }
-
 
 .head{
   display: flex;
@@ -52,7 +48,6 @@ h2 {
  
 }
 
-
 .notiz{
   font-size: 16px;
   font-weight: bold;
@@ -64,7 +59,6 @@ h2 {
   border-radius: 10px;
   box-shadow: 0px 14px 24px -4px rgba(151, 116, 116, 0.53);
 }
-
 
 .notiz button{
   background: linear-gradient(45deg, #fff, #61b5df, #cc86cc);
@@ -79,13 +73,11 @@ h2 {
   box-shadow: 0px 0px 24px -4px rgba(14, 131, 203, 0.53);
 }
 
-
 .notiz button:hover{
   background: linear-gradient(45deg, #fff, #6ae02f, #f6f7f3);;
   box-shadow: 0px 0px 24px -4px rgba(9, 213, 231, 0.223);
  
 }
-
 
 .new-note{
   display: grid;
@@ -98,12 +90,10 @@ h2 {
   place-items: center;
 }
 
-
 .new-note h2{
   grid-area: 1/ 1 / 2 / 3;
   font-size: 24px;
 }
-
 
 .title{
   grid-area: 2 / 1 / 3 / 2;
@@ -111,7 +101,6 @@ h2 {
   margin-right: 10px;
 
 }
-
 
 .title-input{
   grid-area: 2 / 2 / 3 / 3;
@@ -130,12 +119,10 @@ h2 {
   margin-right: 100px;
 }
 
-
 .content{
   grid-area: 3 / 1 / 5 / 2;;
   font-size: 24px;
 }
-
 
 .content-input{
   grid-area: 3 / 2 / 5 / 3; /* Position im Grid */
@@ -153,7 +140,6 @@ h2 {
   margin-right: 100px;
 }
 
-
 .create-button{
   grid-area: 5 / 1 / 6 / 3;
   background: linear-gradient(45deg,#fff, #e7c8e7, #81cee7);
@@ -169,7 +155,6 @@ h2 {
   height: 40px;
 }
 
-
 .radios{
   display: flex;
   justify-content: center;
@@ -177,16 +162,13 @@ h2 {
   width: 40vw;
 }
 
-
 .radios input{
   margin-right: 5px;
 }
 
-
 .radios label{
   margin-right: 20px;
 }
-
 
 .notiz-liste{
   padding: 20px;
@@ -195,9 +177,3 @@ h2 {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-
-
-
-
-
-
