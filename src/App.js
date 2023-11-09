@@ -86,8 +86,7 @@ const App = () => {
   return (
     <div>
       <div class="head">
-        <h1>Mein Notizbuch App</h1>
-        <NeueNotizFormular hinzufuegenNotiz={handleNeueNotiz} />
+      <h1>Mein Notizbuch App</h1>
         <input
           type="text"
           placeholder="Suche nach Notizen..."
@@ -104,6 +103,7 @@ const App = () => {
           <option value="privat">Nur private Notizen anzeigen</option>
         </select>
       </div>
+      <NeueNotizFormular hinzufuegenNotiz={handleNeueNotiz} />
       <NotizListe
         notizen={gefilterteNotizen}
         bearbeiteNotiz={handleNotizAktualisierung}
