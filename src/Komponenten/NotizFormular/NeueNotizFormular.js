@@ -91,3 +91,4 @@ const NeueNotizFormular = ({ hinzufuegenNotiz, benutzerVerbunden }) => {
 };
 
 export default NeueNotizFormular;
+
