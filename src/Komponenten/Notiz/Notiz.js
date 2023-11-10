@@ -23,8 +23,5 @@ const Notiz = ({ notiz, bearbeiteNotiz, loescheNotiz }) => {
   );
 };
 
-<<<<<<< HEAD
 export default Notiz;
-=======
-export default Notiz;
->>>>>>> f74d1419a66393d160388848620c0f8b4beba407
+
