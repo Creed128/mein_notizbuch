@@ -1,4 +1,6 @@
 import React from 'react';
+// Die NotizElement-Komponente rendert ein einzelnes Element einer Notiz.
+// Sie erhält die Notizdaten (Titel und Inhalt) sowie Funktionen zum Bearbeiten und Löschen der Notiz als Props.
 
 const NotizElement = ({ notiz, bearbeiteNotiz, loescheNotiz }) => {
   return (
