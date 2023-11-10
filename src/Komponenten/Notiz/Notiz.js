@@ -1,75 +1,24 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const Notiz = ({ notiz, bearbeiteNotiz, loescheNotiz, edit }) => {
-  const [showPopup, setShowPopup] = useState(false);
-  var editing = edit;
-  console.log(editing)
+const Notiz = ({ notiz, bearbeiteNotiz, loescheNotiz }) => {
+  const handleBearbeiten = () => {
+    const neuerTitel = prompt('Geben Sie den neuen Titel ein:');
+    const neuerInhalt = prompt('Geben Sie den neuen Inhalt ein:');
 
-  const handleBearbeitenClick = () => {
-    setShowPopup(true);
-  };
-
-  const handlePopupClose = () => {
-    setShowPopup(false);
-  };
-
-  const handleBearbeitenSubmit = (updatedNotiz) => {
-    bearbeiteNotiz(notiz.id, updatedNotiz);
-    setShowPopup(false);
+    if (neuerTitel !== null && neuerInhalt !== null) {
+      bearbeiteNotiz(notiz.id, { title: neuerTitel, content: neuerInhalt });
+    }
   };
 
   return (
-    <div className="notiz">
+    <div className="notiz-element">
       <h3>{notiz.title}</h3>
       <p>{notiz.content}</p>
-      <p>Erstellungsdatum: {notiz.erstellungsdatum}</p>
-      <button onClick={handleBearbeitenClick}>Bearbeiten</button>
+      <p>{`Erstellt am: ${notiz.erstellungsdatum}`}</p>
+      <button className="bearbeiten-button" onClick={handleBearbeiten}>
+        Bearbeiten
+      </button>
       <button onClick={() => loescheNotiz(notiz.id)}>Löschen</button>
-
-      {showPopup && (
-        <Popup
-          notiz={notiz}
-          onClose={handlePopupClose}
-          onSubmit={handleBearbeitenSubmit}
-        />
-      )}
-    </div>
-  );
-};
-
-const Popup = ({ notiz, onClose, onSubmit }) => {
-  const [updatedNotiz, setUpdatedNotiz] = useState({ title: '', content: '' });
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setUpdatedNotiz((prevNotiz) => ({
-      ...prevNotiz,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = () => {
-    onSubmit(updatedNotiz);
-  };
-
-  return (
-    <div className="popup">
-      <h3>Bearbeiten</h3>
-      <input
-        placeholder={notiz.title}
-        type="text"
-        name="title"
-        value={updatedNotiz.title}
-        onChange={handleInputChange}
-      />
-      <textarea
-        placeholder={notiz.content}
-        name="content"
-        value={updatedNotiz.content}
-        onChange={handleInputChange}
-      />
-      <button onClick={handleSubmit}>Speichern</button>
-      <button onClick={onClose}>Abbrechen</button>
     </div>
   );
 };
