@@ -1,90 +1,126 @@
 /* main.css */
 
-/* Hintergrundfarbe und Textfarbe werden bestimmt */
-:root{
-  --background-color: #0979db;
-  --text-color: #f2e9e4;
-}
-
-*{
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #eddaf6;
+  color: #1111ea;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 0;
   padding: 0;
 }
 
-/*NeueNotizFormular content input Feld */
-#editor{
-  height: 200px;
-  background-color: white;
-  color: black;
+.head {
+  text-align: center;
+  margin: 20px;
 }
 
-/* Schriftart wird bestimmt */
-html, body {
-/* Schriftart wird bestimmt */
-  font-family: Arial, Helvetica, sans-serif;
-/* Seite und Spalten, Zeilen werden zentriert*/
+h1 {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.new-note {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+
+.label {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.input-field {
+  width: 70%;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #247ac5;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.textarea-field {
+  width: 70%;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #af7eba;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  height: 200px;
+  line-height: 1.5;
+  font-family: 'Courier New', Courier, monospace; /* Utilise une police monospace pour les lignes */
+}
+
+.radios {
+  display: flex;
   justify-content: center;
   align-items: center;
-
-  /* Hintergrundfarbe wird von root übernommen */
-  background-color: var(--background-color);
-  /* Textfarbe wird auch von root übernommen*/
-  color: var(--text-color);
-  width: 53%;
-  margin: auto;
+  margin-bottom: 20px;
 }
 
-
-#root {
-  text-align: center;
-  position: absolute;
-  top: 0;
-  margin: 20px 0;
-}
-
-h2 {
-  color:  rgb(53, 66, 101);
-}
-
-.head{
+.radio-group {
   display: flex;
-  flex-direction: column;
-  gap: 50px;
+  margin-right: 20px;
 }
 
-.notiz{
-  background-color: rgb(72, 107, 175);
-  display: flex;
-  flex-direction: column;
-  margin: 30px auto;
-  border-radius: 50px;
-  box-shadow: 0px 14px 24px -4px rgba(0, 0, 0, 0.332);
+.radio-label {
+  font-size: 16px;
+  margin-left: 5px;
 }
 
-.notiz button{
-  background-color: rgb(70, 33, 154);
+.create-button {
+  background: linear-gradient(45deg, #fff, #e7c8e7, #81cee7);
+  font-size: 20px;
+  font-weight: bold;
   outline: none;
   border: none;
+  border-radius: 50px;
+  padding: 15px;
+  color: #0b0b0c;
+  box-shadow: 0px 0px 24px -4px rgba(14, 131, 203, 0.53);
+  cursor: pointer;
+}
+
+.create-button:hover {
+  background: linear-gradient(45deg, #fff, #6ae02f, #f6f7f3);
+  box-shadow: 0px 0px 24px -4px rgba(9, 213, 231, 0.223);
+}
+.notiz-element {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 8px;
+}
+
+.bearbeiten-button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
   border-radius: 5px;
-  padding: 5px;
-  margin: 3px 120px;
-  color: var(--text-color);
-  box-shadow: 0px 0px 24px -4px rgba(0,0,0,0.53);
-  transition: background-color .2s;
+  cursor: pointer;
 }
 
-.notiz button:hover{
-  background-color: #9b919a;
-  box-shadow: 0px 0px 24px -4px rgba(0, 0, 0, 0.223)
+.bearbeiten-button:hover {
+  background-color: #45a049;
 }
 
 
-.popup{
-  display: flex;
-  flex-direction: column;
-  width: 60%;
-  align-items: center;
-  margin: auto;
-}
+
+
