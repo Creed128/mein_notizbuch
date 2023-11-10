@@ -21,7 +21,7 @@ const Notiz = ({ notiz, bearbeiteNotiz, loescheNotiz, edit }) => {
   return (
     <div className="notiz">
       <h3>{notiz.title}</h3>
-      <p>{notiz.content}</p>
+      <p dangerouslySetInnerHTML={{__html: notiz.content}}></p>
       <p>Erstellungsdatum: {notiz.erstellungsdatum}</p>
       <button onClick={handleBearbeitenClick}>Bearbeiten</button>
       <button onClick={() => loescheNotiz(notiz.id)}>Löschen</button>

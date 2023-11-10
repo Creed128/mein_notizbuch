@@ -22,6 +22,7 @@ const App = () => {
 
   const handleNeueNotiz = (neueNotiz) => {
     // Füge den aktuellen Status (privat oder öffentlich) zur Notiz hinzu
+    console.log(neueNotiz)
     setNotizen([...notizen, neueNotiz]);
   };
 
