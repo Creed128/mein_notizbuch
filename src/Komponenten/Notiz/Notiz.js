@@ -1,4 +1,3 @@
-// Notiz.js
 import React from 'react';
 
 const Notiz = ({ notiz, bearbeiteNotiz, loescheNotiz }) => {
@@ -15,6 +14,7 @@ const Notiz = ({ notiz, bearbeiteNotiz, loescheNotiz }) => {
     <div className="notiz-element">
       <h3>{notiz.title}</h3>
       <p>{notiz.content}</p>
+      <p>{`Erstellt am: ${notiz.erstellungsdatum}`}</p>
       <button className="bearbeiten-button" onClick={handleBearbeiten}>
         Bearbeiten
       </button>

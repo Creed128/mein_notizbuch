@@ -1,4 +1,3 @@
-// App.js
 import React, { useState, useEffect } from 'react';
 import './styles/main.css';
 import NotizListe from './Komponenten/NotizListe/NotizListe';
@@ -55,12 +54,14 @@ const App = () => {
   const handleNeueNotiz = (neueNotiz) => {
     if (!benutzerVerbunden.isConnected) {
       if (neueNotiz.isPublic) {
+        neueNotiz.erstellungsdatum = new Date().toLocaleString();
         setNotizen([...notizen, neueNotiz]);
       } else {
         alert('Sie müssen angemeldet sein, um private Notizen zu erstellen.');
       }
     } else {
-      neueNotiz.isPublic = sichtbarkeit === 'oeffentlich';
+      neueNotiz.erstellungsdatum = new Date().toLocaleString();
+      neueNotiz.isPublic = neueNotiz.isPublic && benutzerVerbunden.isConnected;
       neueNotiz.owner = benutzerVerbunden.username;
       setNotizen([...notizen, neueNotiz]);
     }
@@ -139,9 +140,7 @@ const App = () => {
               <option value="erstellungsdatum">Sortieren nach Erstellungsdatum</option>
             </select>
             <select value={sichtbarkeit} onChange={handleSichtbarkeitChange}>
-              <option value="alle" disabled={!benutzerVerbunden.isConnected}>
-                Alle Notizen anzeigen
-              </option>
+              <option value="alle">Alle Notizen anzeigen</option>
               <option value="oeffentlich">Nur öffentliche Notizen anzeigen</option>
               {benutzerVerbunden.isConnected && (
                 <option value="privat">Nur private Notizen anzeigen</option>
@@ -154,6 +153,7 @@ const App = () => {
         notizen={gefilterteNotizen}
         bearbeiteNotiz={handleNotizAktualisierung}
         loescheNotiz={handleNotizLoeschen}
+        benutzerVerbunden={benutzerVerbunden}
       />
     </div>
   );
