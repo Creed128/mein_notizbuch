@@ -27,7 +27,7 @@ const App = () => {
     speichernImLocalStorage('notizen', notizen);
   }, [notizen]);
 
-  // Fonction de filtre par terme de recherche
+  // Funktion für die Filterung nach Suchbegriff
   const filterNachSuchbegriff = (notiz, eingabe) => {
     return (
       notiz.title.toLowerCase().includes(eingabe) ||
@@ -35,34 +35,38 @@ const App = () => {
     );
   };
 
-  // Fonction pour gérer le changement du terme de recherche
+  // Funktion zum Bearbeiten des Suchbegriffs
   const handleSuchbegriffChange = (e) => {
     const eingabe = e.target.value.toLowerCase();
     setSuchbegriff(eingabe);
   };
 
-  // Fonction pour gérer le changement de la méthode de tri
+  // Funktion zum Ändern der Sortiermethode
   const handleSortierungChange = (e) => {
     setSortierung(e.target.value);
   };
 
-  // Fonction pour gérer le changement de la visibilité
+  // Funktion zum Ändern der Sichtbarkeit
   const handleSichtbarkeitChange = (e) => {
     setSichtbarkeit(e.target.value);
   };
 
-  // Fonction pour gérer l'ajout d'une nouvelle note
+  // Funktion zum Hinzufügen einer neuen Notiz
   const handleNeueNotiz = (neueNotiz) => {
-    if (benutzerVerbunden.isConnected || !neueNotiz.isPublic) {
+    if (!benutzerVerbunden.isConnected) {
+      if (neueNotiz.isPublic) {
+        setNotizen([...notizen, neueNotiz]);
+      } else {
+        alert('Sie müssen angemeldet sein, um private Notizen zu erstellen.');
+      }
+    } else {
       neueNotiz.isPublic = sichtbarkeit === 'oeffentlich';
       neueNotiz.owner = benutzerVerbunden.username;
       setNotizen([...notizen, neueNotiz]);
-    } else {
-      alert('Sie müssen angemeldet sein, um private Notizen zu erstellen.');
     }
   };
 
-  // Fonction pour gérer la mise à jour d'une note
+  // Funktion zum Aktualisieren einer Notiz
   const handleNotizAktualisierung = (id, aktualisierteNotiz) => {
     const aktualisierteNotizen = notizen.map((notiz) =>
       notiz.id === id ? { ...notiz, ...aktualisierteNotiz } : notiz
@@ -70,7 +74,7 @@ const App = () => {
     setNotizen(aktualisierteNotizen);
   };
 
-  // Fonction pour gérer la suppression d'une note
+  // Funktion zum Löschen einer Notiz
   const handleNotizLoeschen = (id) => {
     const bestaetigung = window.confirm('Sind Sie sicher, dass Sie diese Notiz löschen möchten?');
     if (bestaetigung) {
@@ -79,18 +83,26 @@ const App = () => {
     }
   };
 
-  // Filtrage des notes selon les critères
+  // Filtern von Notizen nach Kriterien
   const filterNachSichtbarkeit = (notiz) => {
+    if (!benutzerVerbunden.isConnected && !notiz.isPublic) {
+      return false;
+    }
+
     if (sichtbarkeit === 'alle') {
       return true;
     } else if (sichtbarkeit === 'oeffentlich') {
       return notiz.isPublic;
     } else {
-      return benutzerVerbunden.isConnected && notiz.owner === benutzerVerbunden.username;
+      return (
+        benutzerVerbunden.isConnected &&
+        notiz.owner === benutzerVerbunden.username &&
+        notiz.isPublic === false
+      );
     }
   };
 
-  // Filtrage final des notes
+  // Endgültiges Filtern von Notizen
   const gefilterteNotizen = notizen
     .filter((notiz) => filterNachSuchbegriff(notiz, suchbegriff) && filterNachSichtbarkeit(notiz))
     .sort((a, b) => {
@@ -110,27 +122,33 @@ const App = () => {
           benutzerVerbunden={benutzerVerbunden}
           setBenutzerVerbunden={setBenutzerVerbunden}
         />
-        <NeueNotizFormular
-          hinzufuegenNotiz={handleNeueNotiz}
-          benutzerVerbunden={benutzerVerbunden}
-        />
-        <input
-          type="text"
-          placeholder="Suche nach Notizen..."
-          value={suchbegriff}
-          onChange={handleSuchbegriffChange}
-        />
-        <select value={sortierung} onChange={handleSortierungChange}>
-          <option value="titel">Sortieren nach Titel</option>
-          <option value="erstellungsdatum">Sortieren nach Erstellungsdatum</option>
-        </select>
-        <select value={sichtbarkeit} onChange={handleSichtbarkeitChange}>
-          <option value="alle">Alle Notizen anzeigen</option>
-          <option value="oeffentlich">Nur öffentliche Notizen anzeigen</option>
-          {benutzerVerbunden.isConnected && (
-            <option value="privat">Nur private Notizen anzeigen</option>
-          )}
-        </select>
+        {benutzerVerbunden.isConnected && (
+          <>
+            <NeueNotizFormular
+              hinzufuegenNotiz={handleNeueNotiz}
+              benutzerVerbunden={benutzerVerbunden}
+            />
+            <input
+              type="text"
+              placeholder="Suche nach Notizen..."
+              value={suchbegriff}
+              onChange={handleSuchbegriffChange}
+            />
+            <select value={sortierung} onChange={handleSortierungChange}>
+              <option value="titel">Sortieren nach Titel</option>
+              <option value="erstellungsdatum">Sortieren nach Erstellungsdatum</option>
+            </select>
+            <select value={sichtbarkeit} onChange={handleSichtbarkeitChange}>
+              <option value="alle" disabled={!benutzerVerbunden.isConnected}>
+                Alle Notizen anzeigen
+              </option>
+              <option value="oeffentlich">Nur öffentliche Notizen anzeigen</option>
+              {benutzerVerbunden.isConnected && (
+                <option value="privat">Nur private Notizen anzeigen</option>
+              )}
+            </select>
+          </>
+        )}
       </div>
       <NotizListe
         notizen={gefilterteNotizen}
