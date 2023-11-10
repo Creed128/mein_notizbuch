@@ -1,23 +1,29 @@
 import React, { useState } from 'react';
 import './NeueNotizFormular.css';
 
+// Komponente NeueNotizFormular
 const NeueNotizFormular = ({ hinzufuegenNotiz, benutzerVerbunden }) => {
+  // Zustandsvariablen
   const [titel, setTitel] = useState('');
   const [inhalt, setInhalt] = useState('');
   const [isPublic, setIsPublic] = useState(true);
 
+  // Funktion zum Handhaben der Änderung des Titels
   const handleTitelChange = (e) => {
     setTitel(e.target.value);
   };
 
+  // Funktion zum Handhaben der Änderung des Inhalts
   const handleInhaltChange = (e) => {
     setInhalt(e.target.value);
   };
 
+  // Funktion zum Handhaben der Änderung der Sichtbarkeit
   const handleSichtbarkeitChange = (e) => {
     setIsPublic(e.target.value === 'oeffentlich');
   };
 
+  // Funktion zum Handhaben der Erstellung einer neuen Notiz
   const handleNeueNotiz = () => {
     if (titel && inhalt) {
       const erstellungsdatum = new Date().toLocaleString();
@@ -40,6 +46,7 @@ const NeueNotizFormular = ({ hinzufuegenNotiz, benutzerVerbunden }) => {
     }
   };
 
+  // JSX-Elemente
   return (
     <div className="new-note">
       <h2>Neue Notiz erstellen</h2>
@@ -91,4 +98,3 @@ const NeueNotizFormular = ({ hinzufuegenNotiz, benutzerVerbunden }) => {
 };
 
 export default NeueNotizFormular;
-
