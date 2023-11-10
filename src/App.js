@@ -1,3 +1,4 @@
+// App.js
 import React, { useState, useEffect } from 'react';
 import './styles/main.css';
 import NotizListe from './Komponenten/NotizListe/NotizListe';
@@ -52,9 +53,13 @@ const App = () => {
 
   // Fonction pour gérer l'ajout d'une nouvelle note
   const handleNeueNotiz = (neueNotiz) => {
-    neueNotiz.isPublic = sichtbarkeit === 'oeffentlich';
-    neueNotiz.owner = benutzerVerbunden.username;
-    setNotizen([...notizen, neueNotiz]);
+    if (benutzerVerbunden.isConnected || !neueNotiz.isPublic) {
+      neueNotiz.isPublic = sichtbarkeit === 'oeffentlich';
+      neueNotiz.owner = benutzerVerbunden.username;
+      setNotizen([...notizen, neueNotiz]);
+    } else {
+      alert('Sie müssen angemeldet sein, um private Notizen zu erstellen.');
+    }
   };
 
   // Fonction pour gérer la mise à jour d'une note
@@ -81,7 +86,7 @@ const App = () => {
     } else if (sichtbarkeit === 'oeffentlich') {
       return notiz.isPublic;
     } else {
-      return notiz.owner === benutzerVerbunden.username;
+      return benutzerVerbunden.isConnected && notiz.owner === benutzerVerbunden.username;
     }
   };
 
