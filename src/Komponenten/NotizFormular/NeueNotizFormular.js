@@ -1,42 +1,91 @@
-const NeueNotizFormular = ({ hinzufuegenNotiz }) => {
+import React, { useState } from 'react';
+import './NeueNotizFormular.css';
+
+const NeueNotizFormular = ({ hinzufuegenNotiz, benutzerVerbunden }) => {
+  const [titel, setTitel] = useState('');
+  const [inhalt, setInhalt] = useState('');
+  const [isPublic, setIsPublic] = useState(true);
+
+  const handleTitelChange = (e) => {
+    setTitel(e.target.value);
+  };
+
+  const handleInhaltChange = (e) => {
+    setInhalt(e.target.value);
+  };
+
+  const handleSichtbarkeitChange = (e) => {
+    setIsPublic(e.target.value === 'oeffentlich');
+  };
 
   const handleNeueNotiz = () => {
-    if (document.getElementById("title-input") !== "" && document.getElementById("editor").innerHTML !== "") {
+    if (titel && inhalt) {
       const erstellungsdatum = new Date().toLocaleString();
-      hinzufuegenNotiz({ id: Date.now(), title: document.getElementById("title-input").value, content: document.getElementById("editor").innerHTML, erstellungsdatum });
-      document.getElementById("editor").innerHTML = ""
-      document.getElementById("title-input").value = ""    
+      const neueNotiz = {
+        id: Date.now(),
+        title: titel,
+        content: inhalt,
+        isPublic: isPublic,
+        erstellungsdatum,
+      };
+
+      if (benutzerVerbunden.isConnected) {
+        neueNotiz.owner = benutzerVerbunden.username;
+      }
+
+      hinzufuegenNotiz(neueNotiz);
+      setTitel('');
+      setInhalt('');
+      setIsPublic(true);
     }
   };
 
-  const handleBold = () => {
-    document.execCommand('bold', false, null);
-  }
-
-  const handleItalic = () => {
-    document.execCommand('italic', false, null);
-  }
-
-  const handleUnderline = () => {
-    document.execCommand('underline', false, null);
-  }
-
   return (
-    <div className='new-note'>
+    <div className="new-note">
       <h2>Neue Notiz erstellen</h2>
-      <label className='title' for="title-input">Titel:</label>
-      <input className='title-input' id="title-input" type="text" />
-      <div>
-        <div>
-          <button onClick={handleBold} id="bold-button"><b>B</b></button>
-          <button onClick={handleItalic} id="italic-button"><i>I</i></button>
-          <button onClick={handleUnderline} id="underline-button"><u>U</u></button>
-        </div>
-        <label className='content' for="content-input">Inhalt:</label>
-        <div contentEditable className='content-input' id="editor"></div>
+      <label className="title" htmlFor="title-input">
+        Titel:
+      </label>
+      <input
+        className="title-input"
+        type="text"
+        value={titel}
+        onChange={handleTitelChange}
+      />
+      <label className="content" htmlFor="content-input">
+        Inhalt:
+      </label>
+      <textarea
+        className="content-input"
+        value={inhalt}
+        onChange={handleInhaltChange}
+        placeholder="Schreibe hier deine Notizen..."
+      />
+      <div className="radios">
+        <input
+          type="radio"
+          name="public-private"
+          value="oeffentlich"
+          checked={isPublic}
+          onChange={handleSichtbarkeitChange}
+        />
+        <label htmlFor="oeffentlich">Öffentlich</label>
+        {benutzerVerbunden.isConnected && (
+          <>
+            <input
+              type="radio"
+              name="public-private"
+              value="privat"
+              checked={!isPublic}
+              onChange={handleSichtbarkeitChange}
+            />
+            <label htmlFor="privat">Privat</label>
+          </>
+        )}
       </div>
-
-      <button className='create-button' onClick={handleNeueNotiz}>Notiz erstellen</button>
+      <button className="create-button" onClick={handleNeueNotiz}>
+        Notiz erstellen
+      </button>
     </div>
   );
 };
