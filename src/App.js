@@ -5,6 +5,7 @@ import NeueNotizFormular from './Komponenten/NotizFormular/NeueNotizFormular';
 import { speichernImLocalStorage, abrufenAusLocalStorage } from './Hilfsmittel/localStorage';
 import Connexion from './Komponenten/connection/Connexion';
 
+
 const App = () => {
   const [notizen, setNotizen] = useState([]);
   const [suchbegriff, setSuchbegriff] = useState('');
@@ -116,7 +117,7 @@ const App = () => {
     });
 
   return (
-    <div>
+    
       <div className="head">
         <h1>Mein Notizbuch App</h1>
         <Connexion
@@ -148,8 +149,8 @@ const App = () => {
             </select>
           </>
         )}
-      </div>
-      <NotizListe
+     
+     <NotizListe
         notizen={gefilterteNotizen}
         bearbeiteNotiz={handleNotizAktualisierung}
         loescheNotiz={handleNotizLoeschen}
