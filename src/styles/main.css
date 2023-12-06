@@ -169,7 +169,7 @@ select {
 img {
     position: absolute;
     top: 10px;
-    left: 10px;
-    width: 22%; /* Automatische Anpassung der Breite entsprechend der maximalen Breite */
-    height: 50%; /* Automatische Anpassung der Höhe entsprechend der maximalen Höhe */
+    left: 50px;
+    width: 15%; /* Automatische Anpassung der Breite entsprechend der maximalen Breite */
+    height: 30%; /* Automatische Anpassung der Höhe entsprechend der maximalen Höhe */
   }
