@@ -166,6 +166,35 @@ select {
   background-color: #fff; /* Ändere die Hintergrundfarbe nach Bedarf */
   cursor: pointer;
 }
+
+.create-button:hover {
+  background: linear-gradient(45deg, #fff, #6ae02f, #f6f7f3);
+  box-shadow: 0px 0px 24px -4px rgba(9, 213, 231, 0.223);
+}
+.notiz-element {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 8px;
+}
+
+.bearbeiten-button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.bearbeiten-button:hover {
+  background-color: #45a049;
+}
+
 img {
     position: absolute;
     top: 10px;
@@ -174,3 +203,4 @@ img {
     height: 30%; /* Automatische Anpassung der Höhe entsprechend der maximalen Höhe */
 
   }
+
