@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './Connexion.css'; 
 
 const Connexion = ({ benutzerVerbunden, setBenutzerVerbunden }) => {
   const [benutzername, setBenutzername] = useState('');
