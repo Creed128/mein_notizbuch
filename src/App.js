@@ -15,7 +15,6 @@ const App = () => {
     isConnected: false,
     username: '',
   });
-
   useEffect(() => {
     const gespeicherteNotizen = abrufenAusLocalStorage('notizen');
     if (gespeicherteNotizen) {
