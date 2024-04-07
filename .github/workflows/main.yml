@@ -3,7 +3,7 @@ name: Docker Image CI
 on:
   push:
     branches:
-      - main  # Trigger den Workflow bei einem Push auf den main-Branch
+      - Hajar
 
 jobs:
   build-and-push:
