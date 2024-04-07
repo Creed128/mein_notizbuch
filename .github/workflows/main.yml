@@ -1,32 +1,26 @@
-name: Build and Push Docker Image
+name: Docker Image CI
 
 on:
   push:
     branches:
-      - Hajar
+      - main  # Trigger den Workflow bei einem Push auf den main-Branch
 
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
+    - name: Checkout code
       uses: actions/checkout@v2
 
     - name: Login to Docker Hub
-      run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+      run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
 
     - name: Build Docker image
-      run: docker build -t your-docker-username/image-name:latest .
+      run: docker build -t hajarbakir/mein_notizbuch0:latest .
 
-    - name: Push Docker image to Docker Hub
-      run: docker push your-docker-username/image-name:latest
+    - name: Tag Docker image
+      run: docker tag hajarbakir/mein_notizbuch0:latest hajarbakir/mein_notizbuch0:latest
 
-    # Bonus: Versionierung
-    - name: Extract git tag
-      run: echo "IMAGE_TAG=v$(git describe --tags)" >> $GITHUB_ENV
-
-    - name: Build and push Docker image with tag
-      run: |
-        docker build -t your-docker-username/image-name:${{ env.IMAGE_TAG }} .
-        docker push your-docker-username/image-name:${{ env.IMAGE_TAG }}
+    - name: Push Docker image
+      run: docker push hajarbakir/mein_notizbuch0:latest
