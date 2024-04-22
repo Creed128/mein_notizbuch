@@ -5,7 +5,6 @@ Notizbuch
 ## Table of Contents
 1. [Technologies](#technologies) 
 
-## Table of Contents
 <a Notizbuch="technologies"></a>
 ### Technologies
 
@@ -20,3 +19,4 @@ A list of technologies used within the project:
 * [HTML Tutorial](https//www.w3schools.com/html): Version unknown
 * [CSS Tutorial](https//www.w3schools.com/css): Version unknown
 * [JavaScript Tutorial](https://www.w3schools.com/js): Version unknown
+
