@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './styles/main.css'; // Assurez-vous que cela ne conflictue pas avec les styles de Bootstrap
+import './styles/main.css';
 import NotizListe from './Komponenten/NotizListe/NotizListe';
 import NeueNotizFormular from './Komponenten/NotizFormular/NeueNotizFormular';
 import { speichernImLocalStorage, abrufenAusLocalStorage } from './Hilfsmittel/localStorage';
@@ -16,6 +16,7 @@ const App = () => {
     username: '',
   });
 
+  // Charger les notes du localStorage au chargement du composant
   useEffect(() => {
     const gespeicherteNotizen = abrufenAusLocalStorage('notizen');
     if (gespeicherteNotizen) {
@@ -23,9 +24,60 @@ const App = () => {
     }
   }, []);
 
+  // Sauvegarder les notes dans le localStorage à chaque modification
   useEffect(() => {
     speichernImLocalStorage('notizen', notizen);
   }, [notizen]);
+
+  // Gérer l'ajout d'une nouvelle note
+  const handleNeueNotiz = (neueNotiz) => {
+    neueNotiz.erstellungsdatum = new Date().toLocaleString();
+    neueNotiz.isPublic = neueNotiz.isPublic && benutzerVerbunden.isConnected; // Ajustez selon votre logique
+    neueNotiz.owner = benutzerVerbunden.username;
+    setNotizen([...notizen, neueNotiz]);
+  };
+
+  // Gérer le changement de critère de recherche
+  const handleSuchbegriffChange = (e) => {
+    setSuchbegriff(e.target.value.toLowerCase());
+  };
+
+  // Gérer le changement de la méthode de tri
+  const handleSortierungChange = (e) => {
+    setSortierung(e.target.value);
+  };
+
+  // Gérer le changement de la visibilité des notes
+  const handleSichtbarkeitChange = (e) => {
+    setSichtbarkeit(e.target.value);
+  };
+
+  // Gérer la mise à jour d'une note
+  const handleNotizAktualisierung = (id, aktualisierteNotiz) => {
+    const aktualisierteNotizen = notizen.map((notiz) =>
+      notiz.id === id ? { ...notiz, ...aktualisierteNotiz } : notiz
+    );
+    setNotizen(aktualisierteNotizen);
+  };
+
+  // Gérer la suppression d'une note
+  const handleNotizLoeschen = (id) => {
+    const aktualisierteNotizen = notizen.filter((notiz) => notiz.id !== id);
+    setNotizen(aktualisierteNotizen);
+  };
+
+  // Filtrer et trier les notes
+  const gefilterteNotizen = notizen
+    .filter((notiz) => notiz.title.toLowerCase().includes(suchbegriff) &&
+                       (notiz.isPublic || (benutzerVerbunden.isConnected && notiz.owner === benutzerVerbunden.username)))
+    .sort((a, b) => {
+      if (sortierung === 'titel') {
+        return a.title.localeCompare(b.title);
+      } else if (sortierung === 'erstellungsdatum') {
+        return a.erstellungsdatum.localeCompare(b.erstellungsdatum);
+      }
+      return 0;
+    });
 
   return (
     <div className="container">

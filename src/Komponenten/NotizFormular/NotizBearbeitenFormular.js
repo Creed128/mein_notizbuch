@@ -1,6 +1,5 @@
-// NeueNotizFormular.js
 import React, { useState } from 'react';
-import './NeueNotizFormular.css'; // Assurez-vous d'importer le fichier CSS pour les styles NeueNotizFormular
+import './NeueNotizFormular.css'; // Continuez à utiliser ce fichier pour les styles spécifiques non couverts par Bootstrap
 
 const NeueNotizFormular = ({ hinzufuegenNotiz }) => {
   const [titel, setTitel] = useState('');
@@ -34,30 +33,47 @@ const NeueNotizFormular = ({ hinzufuegenNotiz }) => {
   return (
     <div className="new-note">
       <h2>Neue Notiz erstellen</h2>
-      <label className="title" htmlFor="title-input">
-        Titel:
-      </label>
+      <label className="form-label" htmlFor="title-input">Titel:</label>
       <input
-        className="title-input"
+        id="title-input"
+        className="form-control"
         type="text"
         value={titel}
         onChange={handleTitelChange}
       />
-      <label className="content" htmlFor="content-input">
-        Inhalt:
-      </label>
+      <label className="form-label" htmlFor="content-input">Inhalt:</label>
       <textarea
-        className="content-input"
+        id="content-input"
+        className="form-control"
         value={inhalt}
         onChange={handleInhaltChange}
       />
       <div className="radios">
-        <input type="radio" name="private-public" value={!isPublic} />
-        <label htmlFor="private-public">Privat</label>
-        <input type="radio" name="private-public" value={isPublic} checked />
-        <label htmlFor="private-public">Öffentlich</label>
+        <div className="form-check">
+          <input
+            type="radio"
+            id="private"
+            name="private-public"
+            className="form-check-input"
+            value={!isPublic}
+            onChange={() => setIsPublic(false)}
+          />
+          <label className="form-check-label" htmlFor="private">Privat</label>
+        </div>
+        <div className="form-check">
+          <input
+            type="radio"
+            id="public"
+            name="private-public"
+            className="form-check-input"
+            value={isPublic}
+            checked={isPublic}
+            onChange={() => setIsPublic(true)}
+          />
+          <label className="form-check-label" htmlFor="public">Öffentlich</label>
+        </div>
       </div>
-      <button className="create-button" onClick={handleNeueNotiz}>
+      <button className="btn btn-primary" onClick={handleNeueNotiz}>
         Notiz erstellen
       </button>
     </div>
