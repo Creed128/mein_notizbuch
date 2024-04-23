@@ -11,14 +11,18 @@ const Notiz = ({ notiz, bearbeiteNotiz, loescheNotiz }) => {
   };
 
   return (
-    <div className="notiz-element">
-      <h3>{notiz.title}</h3>
-      <p>{notiz.content}</p>
-      <p>{`Erstellt am: ${notiz.erstellungsdatum}`}</p>
-      <button className="bearbeiten-button" onClick={handleBearbeiten}>
-        Bearbeiten
-      </button>
-      <button onClick={() => loescheNotiz(notiz.id)}>Löschen</button>
+    <div className="card mb-3 notiz-element">
+      <div className="card-body">
+        <h3 className="card-title">{notiz.title}</h3>
+        <p className="card-text">{notiz.content}</p>
+        <p className="card-text"><small className="text-muted">Erstellt am: {notiz.erstellungsdatum}</small></p>
+        <button className="btn btn-info" onClick={handleBearbeiten}>
+          Bearbeiten
+        </button>
+        <button className="btn btn-danger ml-2" onClick={() => loescheNotiz(notiz.id)}>
+          Löschen
+        </button>
+      </div>
     </div>
   );
 };

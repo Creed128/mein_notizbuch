@@ -8,7 +8,7 @@ const Connexion = ({ benutzerVerbunden, setBenutzerVerbunden }) => {
 
   const handleLogin = () => {
     const gefundenerBenutzer = benutzer.find(
-      (user) => user.benutzername === benutzername && user.passwort === passwort
+      user => user.benutzername === benutzername && user.passwort === passwort
     );
 
     if (gefundenerBenutzer) {
@@ -26,7 +26,7 @@ const Connexion = ({ benutzerVerbunden, setBenutzerVerbunden }) => {
   };
 
   const handleRegistration = () => {
-    if (benutzer.some((user) => user.benutzername === benutzername)) {
+    if (benutzer.some(user => user.benutzername === benutzername)) {
       setFehlermeldung('Benutzername bereits vorhanden.');
     } else {
       setBenutzer([...benutzer, { benutzername, passwort }]);
@@ -37,29 +37,35 @@ const Connexion = ({ benutzerVerbunden, setBenutzerVerbunden }) => {
   };
 
   return (
-    <div>
+    <div className="container mt-3">
       {benutzerVerbunden && benutzerVerbunden.isConnected ? (
         <div>
           <p>Eingeloggt als: {benutzerVerbunden.username}</p>
-          <button onClick={handleLogout}>Ausloggen</button>
+          <button className="btn btn-danger" onClick={handleLogout}>Ausloggen</button>
         </div>
       ) : (
         <div>
-          <label>Benutzername:</label>
-          <input
-            type="text"
-            value={benutzername}
-            onChange={(e) => setBenutzername(e.target.value)}
-          />
-          <label>Passwort:</label>
-          <input
-            type="password"
-            value={passwort}
-            onChange={(e) => setPasswort(e.target.value)}
-          />
-          <button onClick={handleLogin}>Einloggen</button>
-          <button onClick={handleRegistration}>Registrieren</button>
-          <p style={{ color: 'red' }}>{fehlermeldung}</p>
+          <div className="form-group">
+            <label>Benutzername:</label>
+            <input
+              className="form-control"
+              type="text"
+              value={benutzername}
+              onChange={e => setBenutzername(e.target.value)}
+            />
+          </div>
+          <div className="form-group">
+            <label>Passwort:</label>
+            <input
+              className="form-control"
+              type="password"
+              value={passwort}
+              onChange={e => setPasswort(e.target.value)}
+            />
+          </div>
+          <button className="btn btn-primary" onClick={handleLogin}>Einloggen</button>
+          <button className="btn btn-secondary ml-2" onClick={handleRegistration}>Registrieren</button>
+          {fehlermeldung && <div className="alert alert-danger mt-2">{fehlermeldung}</div>}
         </div>
       )}
     </div>
