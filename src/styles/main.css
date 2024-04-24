@@ -1,9 +1,9 @@
-/* main.css */
+/* main.css - Optimisé pour utiliser avec Bootstrap */
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #eddaf6;
-  color: #1111ea;
+  font-family: Arial, Helvetica, sans-serif; /* Bootstrap utilise déjà ces polices, assurez-vous qu'elles sont cohérentes */
+  background-color: #eddaf6; /* Couleur de fond personnalisée, non fournie par Bootstrap */
+  color: #1111ea; /* Couleur de texte personnalisée */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,111 +17,65 @@ body {
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 40px; /* Taille de police personnalisée pour les titres importants */
   font-weight: bold;
   margin-bottom: 20px;
 }
 
-.new-note {
+/* Utilisation des utilitaires Bootstrap pour la gestion des marges et paddings où nécessaire */
+.new-note, .form-group, .radios {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 20px;
+  margin-bottom: 20px; /* Bootstrap fournit des classes comme mb-2, mb-3, etc., pour la gestion des marges */
 }
 
-.form-group {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 10px;
-}
-
-.label {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.input-field {
-  width: 70%;
+/* Utilisation des classes de Bootstrap pour les entrées de formulaire */
+.input-field, .textarea-field {
+  width: 100%; /* Adapté pour la responsivité */
   padding: 10px;
   font-size: 16px;
   border: 2px solid #247ac5;
   border-radius: 5px;
-  margin-bottom: 20px;
 }
 
 .textarea-field {
-  width: 70%;
-  padding: 10px;
-  font-size: 16px;
-  border: 2px solid #af7eba;
-  border-radius: 5px;
-  margin-bottom: 20px;
-  height: 200px;
+  height: 200px; /* Hauteur spécifique pour les zones de texte */
   line-height: 1.5;
-  font-family: 'Courier New', Courier, monospace; /* Utilise une police monospace pour les lignes */
 }
 
-.radios {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.radio-group {
-  display: flex;
-  margin-right: 20px;
-}
-
-.radio-label {
+/* Remplacement des styles des boutons par des classes Bootstrap */
+.create-button, .bearbeiten-button {
   font-size: 16px;
-  margin-left: 5px;
+  border-radius: 5px;
+  padding: 10px 15px;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+  /* Utilisez les classes btn et btn-primary ou btn-danger pour colorer les boutons */
 }
 
 .create-button {
-  background: linear-gradient(45deg, #fff, #e7c8e7, #81cee7);
-  font-size: 20px;
-  font-weight: bold;
-  outline: none;
-  border: none;
-  border-radius: 50px;
-  padding: 15px;
-  color: #0b0b0c;
-  box-shadow: 0px 0px 24px -4px rgba(14, 131, 203, 0.53);
-  cursor: pointer;
+  background-color: #81cee7; /* Choisissez des couleurs appropriées avec des classes Bootstrap comme btn-primary */
 }
 
-.create-button:hover {
-  background: linear-gradient(45deg, #fff, #6ae02f, #f6f7f3);
-  box-shadow: 0px 0px 24px -4px rgba(9, 213, 231, 0.223);
+.create-button:hover, .bearbeiten-button:hover {
+  background-color: #45a049; /* Hover state avec Bootstrap btn-hover */
 }
+
 .notiz-element {
   border: 1px solid #ccc;
   padding: 10px;
   margin: 10px;
-  border-radius: 8px;
+  border-radius: 8px; /* Bootstrap fournit des utilitaires pour border-radius */
 }
 
+/* Classe de Bootstrap btn pour tous les boutons */
 .bearbeiten-button {
   background-color: #4caf50;
   color: white;
-  border: none;
-  padding: 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  border-radius: 5px;
-  cursor: pointer;
 }
 
 .bearbeiten-button:hover {
   background-color: #45a049;
 }
-
-
-
-
-
