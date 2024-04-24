@@ -5,6 +5,8 @@ import NeueNotizFormular from './Komponenten/NotizFormular/NeueNotizFormular';
 import { speichernImLocalStorage, abrufenAusLocalStorage } from './Hilfsmittel/localStorage';
 import Connexion from './Komponenten/connection/Connexion';
 
+
+
 const App = () => {
   const [notizen, setNotizen] = useState([]);
   const [suchbegriff, setSuchbegriff] = useState('');

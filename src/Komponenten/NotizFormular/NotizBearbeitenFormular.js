@@ -58,6 +58,7 @@ const NeueNotizFormular = ({ hinzufuegenNotiz }) => {
         <label htmlFor="private-public">Öffentlich</label>
       </div>
       <button className="create-button" onClick={handleNeueNotiz}>
+        
         Notiz erstellen
       </button>
     </div>
