@@ -2,17 +2,10 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-<<<<<<< Updated upstream
-  background: linear-gradient(45deg, #82b5cf);
   color: #0909e5;
-=======
-  background-color: #e3c8f0;
-  color: #1111ea;
->>>>>>> Stashed changes
   display: flex;
   flex-direction: column;
   justify-content: center; /* Vertikales Zentrieren */
-
   margin: 0;
   padding: 0;
 }
