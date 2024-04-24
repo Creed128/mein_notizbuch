@@ -1,7 +1,7 @@
 // routes.js
 const express = require('express');
 const router = express.Router();
-const notesController = require('./controllers/notesController');
+const notesController = require('./notesController');
 
 // Route pour obtenir toutes les notes
 router.get('/notes', notesController.getAllNotes);
