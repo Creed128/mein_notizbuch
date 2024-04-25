@@ -1,20 +1,19 @@
 // Import necessary libraries
+
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
+const mongoose = require('mongoose');
 const routes = require('./routes');
 const notesController = require('./notesController');
- // Assurez-vous que le chemin d'accès est correct
- const mongoose = require('mongoose');
-
-// Connection à MongoDB
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log('MongoDB connected'))
-  .catch(err => console.log(err));
-
 
 // Initialize dotenv to use .env file for environment variables
 dotenv.config();
+
+// Connection à MongoDB
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log('MongoDB connected'))
+  .catch(err => console.log(err));
 
 // Create an Express application
 const app = express();
