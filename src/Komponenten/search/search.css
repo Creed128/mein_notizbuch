@@ -1,18 +1,11 @@
-/* styles.css */
-/* CSS für die Suchfunktion */
 .search-box {
-    margin: 10px;
-  }
-  
-  .search-input {
-    padding: 5px;
-    width: 200px;
-  }
-  
-  .search-button {
-    padding: 5px 10px;
-    background-color: #d9122c;
-    color: #151515;
-    border: none;
-    cursor: pointer;
-  }
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 999; /* Stellen Sie sicher, dass das Suchfeld über anderen Elementen liegt */
+}
+
+#note-list {
+  margin-top: 60px; /* Platz für das Suchfeld schaffen */
+  /* Ihre anderen CSS-Stile für #note-list bleiben unverändert */
+}

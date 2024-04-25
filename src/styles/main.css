@@ -1,127 +1,40 @@
-/* main.css */
-
+/* Globale Stile für die gesamte Seite */
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #eddaf6;
-  color: #1111ea;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   margin: 0;
   padding: 0;
-}
-
-.head {
-  text-align: center;
-  margin: 20px;
-}
-
-h1 {
-  font-size: 40px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-.new-note {
+  font-family: Arial, sans-serif;
+  min-height: 100vh; /* Mindesthöhe der Seite auf 100% der Bildschirmhöhe setzen */
+  background: linear-gradient(135deg, #897aff, #87CEEB, #6A5ACD); /* Linearer Verlauf mit drei Farben als Hintergrund des Body */
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 20px;
+  justify-content: center; /* Inhalt horizontal zentrieren */
+  align-items: center; /* Inhalt vertikal zentrieren */
 }
 
-.form-group {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 10px;
+/* Container für den gesamten Inhalt der Seite */
+.container {
+  width: 80%; /* Breite des Inhalts */
+  background-color: #f6f1f1; /* Hintergrundfarbe des Inhalts */
+  padding: 20px; /* Innenabstand des Containers */
+  border-radius: 10px; /* Abrundung der Ecken des Containers */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Schatten um den Container */
+  text-align: center; /* Zentrierung des Textes */
 }
 
-.label {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 10px;
+/* Stile für den Header */
+.header {
+  padding: 20px 0; /* Innenabstand des Headers */
+  background-color: #333; /* Hintergrundfarbe des Headers */
+  color: #fff; /* Textfarbe des Headers */
 }
 
-.input-field {
-  width: 70%;
-  padding: 10px;
-  font-size: 16px;
-  border: 2px solid #247ac5;
-  border-radius: 5px;
-  margin-bottom: 20px;
+/* Stile für den Hauptinhalt */
+.main-content {
+  margin-top: 20px; /* Abstand zum Header */
 }
 
-.textarea-field {
-  width: 70%;
-  padding: 10px;
-  font-size: 16px;
-  border: 2px solid #af7eba;
-  border-radius: 5px;
-  margin-bottom: 20px;
-  height: 200px;
-  line-height: 1.5;
-  font-family: 'Courier New', Courier, monospace; /* Utilise une police monospace pour les lignes */
+/* Stile für den Footer */
+.footer {
+  padding: 20px 0; /* Innenabstand des Footers */
+  background-color: #333; /* Hintergrundfarbe des Footers */
+  color: #fff; /* Textfarbe des Footers */
 }
-
-.radios {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.radio-group {
-  display: flex;
-  margin-right: 20px;
-}
-
-.radio-label {
-  font-size: 16px;
-  margin-left: 5px;
-}
-
-.create-button {
-  background: linear-gradient(45deg, #fff, #e7c8e7, #81cee7);
-  font-size: 20px;
-  font-weight: bold;
-  outline: none;
-  border: none;
-  border-radius: 50px;
-  padding: 15px;
-  color: #0b0b0c;
-  box-shadow: 0px 0px 24px -4px rgba(14, 131, 203, 0.53);
-  cursor: pointer;
-}
-
-.create-button:hover {
-  background: linear-gradient(45deg, #fff, #6ae02f, #f6f7f3);
-  box-shadow: 0px 0px 24px -4px rgba(9, 213, 231, 0.223);
-}
-.notiz-element {
-  border: 1px solid #ccc;
-  padding: 10px;
-  margin: 10px;
-  border-radius: 8px;
-}
-
-.bearbeiten-button {
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  padding: 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.bearbeiten-button:hover {
-  background-color: #45a049;
-}
-
-
-
-
-
