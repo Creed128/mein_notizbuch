@@ -1,41 +1,19 @@
-# syntax=docker/dockerfile:1
+# Verwende ein offizielles Node.js-Image als Basis
+FROM node:18
 
-# Use the specific Python version
-ARG PYTHON_VERSION=3.11.3
-FROM python:${PYTHON_VERSION}-slim as base
+# Setze das Arbeitsverzeichnis im Container
+WORKDIR /usr/src/app
 
-# Set environment variables
-ENV PYTHONDONTWRITEBYTECODE=1
-ENV PYTHONUNBUFFERED=1
+# Kopiere die Abhängigkeiten und den Package-Lock in den Container
+COPY package*.json ./
 
-# Set the working directory
-WORKDIR /app
+# Installiere die Abhängigkeiten
+RUN npm install
 
-# Create a non-privileged user
-ARG UID=10001
-RUN adduser \
-    --disabled-password \
-    --gecos "" \
-    --home "/nonexistent" \
-    --shell "/sbin/nologin" \
-    --no-create-home \
-    --uid "${UID}" \
-    appuser
-
-# Install Python dependencies
-RUN --mount=type=cache,target=/root/.cache/pip \
-    --mount=type=bind,source=requirements.txt,target=requirements.txt \
-    python -m pip install -r requirements.txt
-
-# Switch to the non-privileged user
-USER appuser
-
-# Copy the source code into the container
+# Kopiere den Rest des Anwendungsquellcodes in den Container
 COPY . .
 
-# Expose the port that the application listens on
-EXPOSE 8000
-
-# Run the application
-CMD ["python", "app.py"]  # Replace "app.py" with the actual entry point of your application
-
+# Exponiere den Port, den die Anwendung verwendet
+EXPOSE 3000
+# Definiere den Befehl, um die Anwendung zu starten
+CMD ["npm", "start"]
