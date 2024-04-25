@@ -1,0 +1,57 @@
+.new-note {
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #410eea55;
+  border-radius: 30px;
+  position: relative; /* Stelle sicher, dass das Pseudo-Element relativ zum .new-note-Element positioniert wird */
+}
+
+  
+  .new-note h2 {
+    margin-bottom: 40px;
+    font-size: 20px;
+    color: #300aec;
+  }
+  
+  .new-note label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+.new-note input[type="text"],
+.new-note textarea {
+  width: 50%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  /* Zentrierung */
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+  
+  .new-note .radios {
+    margin-bottom: 10px;
+  }
+  
+  .new-note .radios label {
+    margin-right: 100px;
+  }
+  
+  .new-note .create-button {
+    padding: 10px 20px;
+    background-color: #1435de;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .new-note .create-button:hover {
+    background-color: #18a3d6;
+  }
+  
