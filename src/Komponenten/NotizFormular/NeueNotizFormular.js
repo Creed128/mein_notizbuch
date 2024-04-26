@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './NeueNotizFormular.css'; // Assurez-vous que cela ne conflictue pas avec les styles de Bootstrap
 
 const NeueNotizFormular = ({ hinzufuegenNotiz, benutzerVerbunden }) => {
   const [titel, setTitel] = useState('');
@@ -42,47 +43,52 @@ const NeueNotizFormular = ({ hinzufuegenNotiz, benutzerVerbunden }) => {
   return (
     <div className="new-note">
       <h2>Neue Notiz erstellen</h2>
-      <label className="title" htmlFor="title-input">
-        Titel:
-      </label>
+      <label className="form-label" htmlFor="title-input">Titel:</label>
       <input
-        className="title-input"
+        className="form-control"
+        id="title-input"
         type="text"
         value={titel}
         onChange={handleTitelChange}
+        placeholder="Titel eingeben..."
       />
-      <label className="content" htmlFor="content-input">
-        Inhalt:
-      </label>
+      <label className="form-label" htmlFor="content-input">Inhalt:</label>
       <textarea
-        className="content-input"
+        className="form-control"
+        id="content-input"
         value={inhalt}
         onChange={handleInhaltChange}
         placeholder="Schreibe hier deine Notizen..."
       />
-      <div className="radios">
-        <input
-          type="radio"
-          name="public-private"
-          value="oeffentlich"
-          checked={isPublic}
-          onChange={handleSichtbarkeitChange}
-        />
-        <label htmlFor="oeffentlich">Öffentlich</label>
+      <div className="mb-3">
+        <div className="form-check form-check-inline">
+          <input
+            className="form-check-input"
+            type="radio"
+            name="public-private"
+            id="oeffentlich"
+            value="oeffentlich"
+            checked={isPublic}
+            onChange={handleSichtbarkeitChange}
+          />
+          <label className="form-check-label" htmlFor="oeffentlich">Öffentlich</label>
+        </div>
         {benutzerVerbunden.isConnected && (
-          <>
+          <div className="form-check form-check-inline">
             <input
+              className="form-check-input"
               type="radio"
               name="public-private"
+              id="privat"
               value="privat"
               checked={!isPublic}
               onChange={handleSichtbarkeitChange}
             />
-            <label htmlFor="privat">Privat</label>
-          </>
+            <label className="form-check-label" htmlFor="privat">Privat</label>
+          </div>
         )}
       </div>
-      <button className="create-button" onClick={handleNeueNotiz}>
+      <button className="btn btn-primary" onClick={handleNeueNotiz}>
         Notiz erstellen
       </button>
     </div>
@@ -90,4 +96,3 @@ const NeueNotizFormular = ({ hinzufuegenNotiz, benutzerVerbunden }) => {
 };
 
 export default NeueNotizFormular;
-
